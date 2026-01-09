@@ -31,6 +31,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="team.html">Team</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="achievements.html">Achievements</a></li>
@@ -45,19 +46,182 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="page-header" style="text-align: center; padding: 100px 0 50px;">
+    <header class="page-header">
         <div class="container">
-            <h1
-                style="font-family: var(--font-heading); background: -webkit-linear-gradient(var(--secondary-neon), var(--primary-neon)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                Events</h1>
-            <p style="color: var(--text-dim);">Witness the future in action.</p>
+            <h1 class="neon-title">Events</h1>
+            <p class="subtitle">Witness the future in action.</p>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
-        <div class="container" style="min-height: 40vh; display: flex; align-items: center; justify-content: center;">
-            <p style="color: var(--text-dim);">[Events Content Pending]</p>
+    <main class="events-main">
+        <div class="container">
+            <!-- Controls: Filter & Sort -->
+            <div class="events-controls">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="workshops">Workshops</button>
+                    <button class="filter-btn" data-filter="competitions">Competitions</button>
+                    <button class="filter-btn" data-filter="guest-lectures">Guest Lectures</button>
+                    <button class="filter-btn" data-filter="social">Social Events</button>
+                </div>
+                <div class="sort-group">
+                    <label for="event-sort">Sort by:</label>
+                    <select id="event-sort" class="sort-select">
+                        <option value="date-asc">Date (Soonest)</option>
+                        <option value="date-desc">Date (Latest)</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Upcoming Events Section -->
+            <section class="events-section upcoming-section">
+                <h2 class="section-heading"><i class="fas fa-calendar-alt"></i> Upcoming Events</h2>
+                <div class="events-grid upcoming-grid" id="upcoming-events-container">
+                    <!-- Event 1: Robotics Workshop -->
+                    <article class="event-card-v2" data-category="workshops" data-date="2026-02-15"
+                        data-name="Robotics Fundamentals 101">
+                        <div class="event-image">
+                            <img src="images/events/upcoming/workshop.svg" alt="Workshop">
+                            <div class="event-tag">Workshop</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="event-date-pill">Feb 15, 2026</div>
+                            <h3>Robotics Fundamentals 101</h3>
+                            <div class="event-meta">
+                                <span><i class="far fa-clock"></i> 10:00 AM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> VLSI Lab</span>
+                            </div>
+                            <p>Introduction to basic circuitry, sensors, and microcontrollers for beginners.</p>
+                            <a href="#" class="btn-register">Register Interest <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Event 2: Mech-War Challenge -->
+                    <article class="event-card-v2" data-category="competitions" data-date="2026-03-10"
+                        data-name="Mech-War Challenge">
+                        <div class="event-image">
+                            <img src="images/events/upcoming/mechwar.svg" alt="Competition">
+                            <div class="event-tag">Competition</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="event-date-pill">Mar 10, 2026</div>
+                            <h3>Mech-War Challenge</h3>
+                            <div class="event-meta">
+                                <span><i class="far fa-clock"></i> 09:00 AM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Main Auditorium</span>
+                            </div>
+                            <p>Annual combat robotics competition where teams battle for supremacy.</p>
+                            <a href="#" class="btn-register">Register Interest <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Event 3: AI in Automation Talk -->
+                    <article class="event-card-v2" data-category="guest-lectures" data-date="2026-03-25"
+                        data-name="AI in Industrial Automation">
+                        <div class="event-image">
+                            <img src="images/events/upcoming/aitalk.svg" alt="Lecture">
+                            <div class="event-tag">Guest Lecture</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="event-date-pill">Mar 25, 2026</div>
+                            <h3>AI in Industrial Automation</h3>
+                            <div class="event-meta">
+                                <span><i class="far fa-clock"></i> 02:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Seminar Hall</span>
+                            </div>
+                            <p>An insightful session on how AI is transforming modern manufacturing.</p>
+                            <a href="#" class="btn-register">Register Interest <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Event 4: Robot Night Out -->
+                    <article class="event-card-v2" data-category="social" data-date="2026-04-05"
+                        data-name="Robot Night Out">
+                        <div class="event-image">
+                            <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=500&q=80"
+                                alt="Social">
+                            <div class="event-tag">Social Event</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="event-date-pill">Apr 05, 2026</div>
+                            <h3>Robot Night Out</h3>
+                            <div class="event-meta">
+                                <span><i class="far fa-clock"></i> 06:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Student Activity Center</span>
+                            </div>
+                            <p>A fun networking evening with robot showcases and music.</p>
+                            <a href="#" class="btn-register">Register Interest <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Ongoing Projects Section -->
+            <section class="events-section ongoing-section">
+                <h2 class="section-heading"><i class="fas fa-spinner fa-spin"></i> Ongoing Club Projects</h2>
+                <div class="ongoing-grid">
+                    <div class="ongoing-project-card">
+                        <div class="project-overlay"></div>
+                        <img src="images/events/ongoing/sentinel.svg" alt="Project 1">
+                        <div class="project-info">
+                            <span class="status-badge">Active</span>
+                            <h3>Autonomous Maze Runner</h3>
+                            <p>Developing a micro-mouse with advanced path-finding algorithms.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 75%;"></div>
+                                <span class="progress-text">75% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ongoing-project-card">
+                        <div class="project-overlay"></div>
+                        <img src="images/events/ongoing/agribot.svg" alt="Project 2">
+                        <div class="project-info">
+                            <span class="status-badge">Active</span>
+                            <h3>Gesture Controlled Hexapod</h3>
+                            <p>Building a 6-legged walker controlled by wearable motion sensors.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 40%;"></div>
+                                <span class="progress-text">40% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Past Events Section -->
+            <section class="events-section past-section">
+                <h2 class="section-heading"><i class="fas fa-history"></i> Past Events Gallery</h2>
+                <div class="past-gallery-grid">
+                    <div class="past-event-item">
+                        <img src="images/events/past/past1.svg" alt="Past Event">
+                        <div class="past-info">
+                            <span class="past-date">Dec 2025</span>
+                            <h4>Winter Hackathon</h4>
+                            <p>48 hours of non-stop coding and building.</p>
+                        </div>
+                    </div>
+                    <div class="past-event-item">
+                        <img src="images/events/past/past2.svg" alt="Past Event">
+                        <div class="past-info">
+                            <span class="past-date">Nov 2025</span>
+                            <h4>Drone Expo</h4>
+                            <p>Aerial displays and racing competitions.</p>
+                        </div>
+                    </div>
+                    <div class="past-event-item">
+                        <img src="images/events/past/past3.svg" alt="Past Event">
+                        <div class="past-info">
+                            <span class="past-date">Oct 2025</span>
+                            <h4>Embedded Systems Workshop</h4>
+                            <p>Deep dive into STM32 microcontrollers.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -98,8 +262,11 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- GSAP & Main Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/events.js"></script>
 </body>
 
 </html>

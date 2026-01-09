@@ -228,22 +228,67 @@ img {
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: 0.9;
 }
 
-/* Slide 1: Deep Purple (#690759) */
+/* Global Tech & Depth Overlay */
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Noise texture + Scanlines + Inner Glow */
+    background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E"),
+        repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 2px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Slide 1: Deep Purple "Cyber Fusion" Mesh */
 .slide-gradient.blue {
-    background: radial-gradient(circle at 50% 100%, #690759 0%, #2a0024 60%, #000000 100%);
+    background:
+        radial-gradient(at 0% 0%, #4a0040 0px, transparent 50%),
+        radial-gradient(at 100% 0%, #2a0024 0px, transparent 50%),
+        radial-gradient(at 100% 100%, #690759 0px, transparent 50%),
+        radial-gradient(at 0% 100%, #1a0b2e 0px, transparent 50%),
+        radial-gradient(at 50% 50%, #2e0249 0px, transparent 50%),
+        #000;
 }
 
-/* Slide 2: Deep Blue (#001B79) */
+/* Slide 2: Electric Cyan "Arctic Grid" Mesh */
 .slide-gradient.cyan {
-    background: radial-gradient(circle at 50% 100%, #001B79 0%, #000d3d 60%, #000000 100%);
+    background:
+        radial-gradient(at 0% 0%, #000d3d 0px, transparent 50%),
+        radial-gradient(at 100% 0%, #001B79 0px, transparent 50%),
+        radial-gradient(at 100% 100%, #000c2e 0px, transparent 50%),
+        radial-gradient(at 0% 100%, #050510 0px, transparent 50%),
+        radial-gradient(at 50% 50%, #003366 0px, transparent 50%),
+        #000;
 }
 
-/* Slide 3: Magenta -> Hot Pink */
+/* Slide 3: Neon Magenta "Quantum Rift" Mesh */
 .slide-gradient.magenta {
-    background: radial-gradient(circle at 50% 100%, #ED006C 0%, #3D103C 60%, #000000 100%);
+    background:
+        radial-gradient(at 0% 0%, #3D103C 0px, transparent 50%),
+        radial-gradient(at 100% 0%, #ED006C 0px, transparent 50%),
+        radial-gradient(at 100% 100%, #2e0249 0px, transparent 50%),
+        radial-gradient(at 0% 100%, #2a0024 0px, transparent 50%),
+        radial-gradient(at 50% 50%, #800040 0px, transparent 50%),
+        #000;
 }
 
 
@@ -254,14 +299,14 @@ img {
     right: 15%;
     width: 50vh;
     height: 50vh;
-    /* Much darker background for better visibility */
-    background: linear-gradient(135deg, rgba(40, 40, 40, 0.95), rgba(10, 10, 10, 1));
-    opacity: 1;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.8));
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     z-index: 1;
     transform: rotate(15deg);
-    /* Enhanced drop-shadow for better border visibility */
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
 
 /* Theme-specific triangle tints */
@@ -562,6 +607,7 @@ img {
 }
 
 .event-card:hover {
+    transform: translateY(-10px);
     border-color: var(--secondary-neon);
     box-shadow: 0 10px 40px rgba(0, 243, 255, 0.2);
 }
