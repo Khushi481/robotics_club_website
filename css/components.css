@@ -278,17 +278,16 @@
 }
 
 .paper-plane svg {
-    width: 100%;
-    max-width: 600px;
-    /* Responsive width, max 600px */
-    height: auto;
+    width: 500px;
+    /* Even bigger airplane as requested */
+    height: 500px;
     filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.9));
     position: relative;
-    left: 0;
-    /* Centered */
-    top: -30px;
-    transform: rotate(-22deg) scale(1.7);
-    /* steeper tilt and scaled up to 1.7 */
+    left: -110px;
+    /* Shifted more to compensate for massive size */
+    top: 20px;
+    transform: rotate(-22deg);
+    /* steeper tilt */
     pointer-events: none;
 }
 
@@ -413,11 +412,11 @@
 }
 
 .social-icon:hover {
-    background: transparent;
+    background: var(--primary-neon);
     border-color: var(--primary-neon);
-    color: var(--primary-neon);
+    color: #fff;
     transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(255, 0, 204, 0.4);
+    box-shadow: 0 0 15px var(--primary-neon);
 }
 
 /* Responsive Design for Contact Page */
