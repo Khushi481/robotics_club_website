@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Robotics Club</title>
+    <meta name="description"
+        content="Explore our latest robotics projects, from autonomous drones to AI-powered rovers.">
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">RI<span>OR</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Robots</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Connect</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="projects-hero">
+        <div class="container hero-content">
+            <h1>Our Projects</h1>
+            <p>Innovating the future, one robot at a time.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="projects-section">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="autonomous">Autonomous</button>
+                <button class="filter-btn" data-filter="drones">Drones</button>
+                <button class="filter-btn" data-filter="ai">AI & ML</button>
+                <button class="filter-btn" data-filter="competitions">Competitions</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card" data-category="autonomous">
+                    <div class="card-image">
+                        <img src="images/projects/project1.jpg" alt="Autonomous Rover"
+                            onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Autonomous Rover</h3>
+                        <p class="tag">Autonomous</p>
+                        <p>A self-navigating rover designed for rough terrain exploration using LIDAR technology.</p>
+                        <a href="#" class="btn-text">View Details &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card" data-category="drones">
+                    <div class="card-image">
+                        <img src="images/projects/project2.jpg" alt="Quadcopter X1"
+                            onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Quadcopter X1</h3>
+                        <p class="tag">Drones</p>
+                        <p>High-speed racing drone with FPV capabilities and custom flight controller.</p>
+                        <a href="#" class="btn-text">View Details &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card" data-category="ai">
+                    <div class="card-image">
+                        <img src="images/projects/project3.jpg" alt="AI Chess Bot"
+                            onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                    </div>
+                    <div class="card-content">
+                        <h3>AI Chess Bot</h3>
+                        <p class="tag">AI & ML</p>
+                        <p>A physical robotic arm that plays chess against humans using computer vision.</p>
+                        <a href="#" class="btn-text">View Details &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card" data-category="competitions">
+                    <div class="card-image">
+                        <img src="images/projects/project4.jpg" alt="BattleBot Destroyer"
+                            onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                    </div>
+                    <div class="card-content">
+                        <h3>BattleBot Destroyer</h3>
+                        <p class="tag">Competitions</p>
+                        <p>Our championship-winning combat robot with a vertical spinner weapon.</p>
+                        <a href="#" class="btn-text">View Details &rarr;</a>
+                    </div>
+                </article>
+                <!-- Project 5 -->
+                <article class="project-card" data-category="autonomous">
+                    <div class="card-image">
+                        <img src="images/projects/project5.jpg" alt="Line Follower"
+                            onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Line Follower v2</h3>
+                        <p class="tag">Autonomous</p>
+                        <p>Advanced PID-controlled line follower for high-speed track navigation.</p>
+                        <a href="#" class="btn-text">View Details &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>RI<span>OR</span></h4>
+                <p>Empowering students to build the future of intelligence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Robots</a></li>
+                    <li><a href="contact.html">Connect</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Robotics Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/filters.js"></script>
+</body>
+
+</html>

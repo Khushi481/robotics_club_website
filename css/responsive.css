@@ -1,0 +1,407 @@
+/* responsive.css - Responsive Overrides */
+
+/* Tablet & Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* --- Navigation --- */
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: var(--secondary-neon);
+        transition: 0.3s;
+    }
+
+    /* Hamburger Animation (Turn to X) */
+    .hamburger span.change:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+        background-color: var(--primary-neon);
+    }
+
+    .hamburger span.change:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger span.change:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+        background-color: var(--primary-neon);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 70%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+
+    /* --- Hero Slider (Compact "Left-Right" Layout) --- */
+    /* Heading stays Left, Robot stays Right. Allow overlap. */
+
+    .slide-content {
+        top: 110px;
+        /* Safe distance below navbar */
+        left: 5%;
+        /* Anchor Left */
+        width: 85%;
+        /* Wide enough for text */
+        text-align: left;
+        /* Keep text left-aligned */
+        padding: 0;
+        z-index: 10;
+        /* Ensure text is ABOVE robot */
+        max-width: none;
+        transform: none;
+    }
+
+    .slide-content h1 {
+        font-size: 2.8rem;
+        /* Readable large font */
+        margin-bottom: 20px;
+        /* Stronger shadow to ensure readability over robot image */
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .slide-content .subtitle {
+        font-size: 1rem;
+        background: rgba(0, 0, 0, 0.3);
+        /* Slight backing to help legibility */
+        display: inline-block;
+        padding: 2px 5px;
+    }
+
+    .cta-wrapper {
+        margin-bottom: 0;
+        display: block;
+        /* Align left */
+    }
+
+    /* Robot - Anchored Right */
+    .robot-img {
+        height: 50vh;
+        /* Good size */
+        width: auto;
+        right: -10%;
+        /* Push slightly off-screen for dynamic look */
+        bottom: 15%;
+        /* Positioned lower-mid */
+        top: auto;
+        left: auto;
+        transform: none;
+        /* No centering */
+        z-index: 2;
+        /* Below Text */
+        opacity: 0.9;
+    }
+
+    /* Triangle - With Robot */
+    .slide-triangle {
+        width: 40vh;
+        height: 40vh;
+        right: -5%;
+        bottom: 15%;
+        top: auto;
+        transform: rotate(15deg);
+        z-index: 1;
+    }
+
+
+    .event-card {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .event-date {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 20px;
+    }
+
+    .event-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Fix achievement grid for mobile */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Prevent horizontal overflow */
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .highlight-card,
+    .achievement-card,
+    .event-card {
+        max-width: 100%;
+    }
+
+    /* Responsive heading sizes to prevent overflow */
+    .slide-content h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem !important;
+    }
+
+    .home-about-section .section-title,
+    .what-we-do-section .section-title,
+    .highlights-section .section-title,
+    .upcoming-event-section .section-title,
+    .achievements-section .section-title {
+        font-size: 2rem !important;
+    }
+
+    .event-details h3 {
+        font-size: 1.5rem;
+    }
+
+    .achievement-card h3,
+    .highlight-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* --- Info Section --- */
+    .info-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+}
+
+/* Extra Small Screens (max-width: 320px) - Fix horizontal overflow */
+@media (max-width: 320px) {
+
+    /* Force everything to fit */
+    * {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    /* Further reduce heading sizes */
+    .slide-content h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .section-title {
+        font-size: 1.5rem !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Reduce card padding */
+    .highlight-card,
+    .achievement-card {
+        padding: 20px 15px;
+    }
+
+    .event-card {
+        padding: 20px 10px;
+    }
+
+    /* Smaller icons */
+    .highlight-icon,
+    .achievement-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    /* Reduce robot size on very small screens */
+    .robot-img {
+        height: 30vh;
+    }
+
+    .slide-triangle {
+        width: 30vh;
+        height: 30vh;
+    }
+
+    /* Footer adjustments */
+    .footer-section {
+        padding: 0 5px;
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ultra Small Screens (max-width: 280px) - Aggressive overflow fix */
+@media (max-width: 280px) {
+
+    /* Even more aggressive containment */
+    html,
+    body {
+        overflow-x: hidden !important;
+        max-width: 100vw;
+    }
+
+    * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .container {
+        width: 100% !important;
+        padding: 0 3px !important;
+        margin: 0 !important;
+    }
+
+    /* Minimal heading sizes */
+    .slide-content h1 {
+        font-size: 1.2rem !important;
+        line-height: 1.1;
+    }
+
+    .section-title {
+        font-size: 1.3rem !important;
+    }
+
+    .logo {
+        font-size: 1.1rem !important;
+        letter-spacing: 1px;
+    }
+
+    /* Ultra compact cards */
+    .highlight-card,
+    .achievement-card,
+    .event-card {
+        padding: 15px 10px !important;
+        margin: 0 !important;
+    }
+
+    .highlight-card h3,
+    .achievement-card h3 {
+        font-size: 1rem !important;
+    }
+
+    .highlight-card p,
+    .achievement-card p {
+        font-size: 0.85rem !important;
+    }
+
+    /* Tiny icons */
+    .highlight-icon,
+    .achievement-badge {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* Minimal robot and triangle */
+    .robot-img {
+        height: 25vh !important;
+    }
+
+    .slide-triangle {
+        width: 25vh !important;
+        height: 25vh !important;
+    }
+
+    /* Compact event card */
+    .event-date {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .event-date .day {
+        font-size: 2rem !important;
+    }
+
+    .event-date .month {
+        font-size: 0.9rem !important;
+    }
+
+    /* Footer ultra compact */
+    .footer-section h4 {
+        font-size: 0.9rem !important;
+    }
+
+    .footer-section p,
+    .footer-section ul li {
+        font-size: 0.8rem !important;
+    }
+
+    .social-icons a {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Reduce all gaps */
+    .highlights-grid,
+    .achievements-grid {
+        gap: 15px !important;
+    }
+
+    /* Navbar adjustments */
+    .nav-container {
+        padding: 0 5px !important;
+    }
+
+    .hamburger span {
+        width: 20px !important;
+    }
+}

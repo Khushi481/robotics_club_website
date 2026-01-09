@@ -1,0 +1,106 @@
+/* components.css - Cyberpunk Components */
+
+/* Buttons */
+.btn-cta {
+    display: inline-block;
+    padding: 15px 40px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-neon);
+    background: transparent;
+    border: 2px solid var(--secondary-neon);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.btn-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-neon);
+    z-index: -1;
+    transition: transform 0.4s ease;
+    transform: skewX(-20deg);
+}
+
+.btn-cta:hover {
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+.btn-cta:hover::before {
+    left: 0;
+    transform: skewX(0deg);
+}
+
+/* Filter Buttons (Projects) */
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-dim);
+    border-radius: 4px;
+    /* Tech look, less rounded */
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: transparent;
+    border-color: var(--primary-neon);
+    color: var(--primary-neon);
+    box-shadow: 0 0 10px rgba(255, 0, 204, 0.3);
+}
+
+/* Project Cards */
+.project-card {
+    background: rgba(26, 11, 46, 0.6);
+    border: 1px solid rgba(255, 0, 204, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 0;
+    /* Sharp edges */
+    position: relative;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid var(--secondary-neon);
+    border-right: 2px solid var(--secondary-neon);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 0, 204, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover::after {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.card-content h3 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+}
+
+.card-content p {
+    color: var(--text-dim);
+}
+
+.btn-text {
+    color: var(--secondary-neon);
+}
