@@ -4,13 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | RIOR</title>
+    <title>Contact | ROBOTICS</title>
     <!-- CSS Links -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        document.documentElement.classList.add('no-transition');
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.documentElement.classList.remove('no-transition');
+            }, 200);
+        });
+    </script>
 </head>
 
 <body class="contact-page">
@@ -18,12 +26,14 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">RI<span>OR</span></a>
+            <a href="index.html" class="logo">RO<span>BOTICS</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Robots</a></li>
+                <li><a href="events.html">Events</a></li>
                 <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
                 <li><a href="contact.html" class="active">Connect</a></li>
             </ul>
             <div class="hamburger">
@@ -34,52 +44,91 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header" style="text-align: center; padding: 100px 0 50px;">
-        <div class="container">
-            <h1
-                style="font-family: var(--font-heading); background: -webkit-linear-gradient(var(--secondary-neon), var(--primary-neon)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                Connect With Us</h1>
-            <p style="color: var(--text-dim);">Join the revolution.</p>
-        </div>
-    </header>
-
     <!-- Main Content -->
-    <main>
-        <div class="container" style="min-height: 40vh; display: flex; align-items: center; justify-content: center;">
-            <p style="color: var(--text-dim);">[Contact Form Placeholder]</p>
+    <main class="contact-main">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Side Drop Left -->
+                <div class="side-drop side-drop-left"></div>
+
+                <!-- Contact Card with Glass Effect -->
+                <div class="contact-card">
+                    <!-- Back Button -->
+                    <a href="index.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+
+                    <!-- Paper Plane Illustration -->
+                    <div class="illustration-section">
+                        <div class="decorative-circle circle-1"></div>
+                        <div class="decorative-circle circle-2"></div>
+                        <div class="decorative-circle circle-3"></div>
+                        <div class="paper-plane">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(50, 80)">
+                                    <!-- Paper plane body -->
+                                    <path d="M 10 10 L 80 40 L 10 70 L 25 40 Z" fill="#ff9999" stroke="#4a4a4a"
+                                        stroke-width="3" />
+                                    <path d="M 25 40 L 80 40" stroke="#4a4a4a" stroke-width="2" />
+                                    <!-- Motion lines -->
+                                    <line x1="0" y1="25" x2="-10" y2="20" stroke="#4a4a4a" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <line x1="0" y1="40" x2="-15" y2="40" stroke="#4a4a4a" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <line x1="0" y1="55" x2="-10" y2="60" stroke="#4a4a4a" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Form Section -->
+                    <div class="form-section">
+                        <h2 class="form-title">Contact us</h2>
+
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" placeholder="Email address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea placeholder="Message..." rows="4" required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                Submit
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+
+                        <!-- Social Icons -->
+                        <div class="contact-social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Drop Right -->
+                <div class="side-drop side-drop-right"></div>
+            </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-section">
-                <h4>RI<span>OR</span></h4>
-                <p>Empowering students to build the future of intelligence.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Robots</a></li>
-                    <li><a href="contact.html">Connect</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Robotics Club. All rights reserved.</p>
-        </div>
-    </footer>
+
 
     <!-- Scripts -->
     <script src="js/main.js"></script>

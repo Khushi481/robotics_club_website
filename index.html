@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        document.documentElement.classList.add('no-transition');
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.documentElement.classList.remove('no-transition');
+            }, 200);
+        });
+    </script>
 </head>
 
 <body class="home-page">

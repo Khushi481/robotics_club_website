@@ -195,18 +195,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
     }
-
-
-    // Navbar Scroll
-    ScrollTrigger.create({
-        start: 'top -50',
-        end: 99999,
-        onUpdate: (self) => {
-            const navbar = document.querySelector('.navbar');
-            if (navbar) {
-                if (self.direction === 1 && self.scroll() > 50) navbar.classList.add('scrolled');
-                else if (self.scroll() < 50) navbar.classList.remove('scrolled');
-            }
-        }
-    });
 });
