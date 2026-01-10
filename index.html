@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotics Club | Future Intelligence</title>
     <!-- CSS Links -->
+    <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -21,12 +27,80 @@
     </script>
 </head>
 
-<body class="home-page">
+<body class="home-page intro-active">
+
+    <!-- Cinematic Intro -->
+    <section id="cinematic-intro">
+        <!-- Interactive Mesh Background -->
+        <canvas id="mesh-canvas"></canvas>
+
+       
+
+        <!-- Kinetic Typography -->
+        <div id="intro-typography">
+            <div class="intro-word word-national">
+                <span id="letter-n" class="intro-letter highlight">N</span><span
+                    class="intro-letter suffix">A</span><span class="intro-letter suffix">T</span><span
+                    class="intro-letter suffix">I</span><span class="intro-letter suffix">O</span><span
+                    class="intro-letter suffix">N</span><span class="intro-letter suffix">A</span><span
+                    class="intro-letter suffix">L</span>
+            </div>
+            <div class="intro-word word-institute">
+                <span id="letter-i" class="intro-letter highlight">I</span><span
+                    class="intro-letter suffix">N</span><span class="intro-letter suffix">S</span><span
+                    class="intro-letter suffix">T</span><span class="intro-letter suffix">I</span><span
+                    class="intro-letter suffix">T</span><span class="intro-letter suffix">U</span><span
+                    class="intro-letter suffix">T</span><span class="intro-letter suffix">E</span>
+            </div>
+            <div class="intro-word word-technology">
+                <span class="intro-letter suffix">O</span><span class="intro-letter suffix">F</span>
+            </div>
+            <div class="intro-word word-technology">
+                <span id="letter-t" class="intro-letter highlight">T</span><span
+                    class="intro-letter suffix">E</span><span class="intro-letter suffix">C</span><span
+                    class="intro-letter suffix">H</span><span class="intro-letter suffix">N</span><span
+                    class="intro-letter suffix">O</span><span class="intro-letter suffix">L</span><span
+                    class="intro-letter suffix">O</span><span class="intro-letter suffix">G</span><span
+                    class="intro-letter suffix">Y</span>
+            </div>
+            <div class="intro-word word-patna">
+                <span id="letter-p" class="intro-letter highlight">P</span><span
+                    class="intro-letter suffix">A</span><span class="intro-letter suffix">T</span><span
+                    class="intro-letter suffix">N</span><span class="intro-letter suffix">A</span>
+            </div>
+        </div>
+
+        <!-- Branding Reveal -->
+        <div id="branding-reveal">
+            <div id="logo-robotics-row">
+                <div id="intro-logo-container">
+                    <img src="images/background/logo.png" alt="Robotics Club Logo" id="intro-logo">
+                </div>
+                <div id="robotics-club-text">ROBOTICS CLUB</div>
+            </div>
+            <div id="nitp-text">NITP</div>
+        </div>
+
+        <!-- Liquid Wavy Transition -->
+        <svg id="wavy-transition" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <mask id="wavy-mask">
+                    <rect width="100" height="100" fill="white" />
+                </mask>
+            </defs>
+        </svg>
+    </section>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">RO<span>BOTICS</span></a>
+            <a href="index.html" class="logo-wrapper">
+                <img src="images/background/logo.png" alt="Robotics Club NIT Patna" class="nav-logo">
+                <div class="logo-text">
+                    <span class="logo-main">RO<span>BOTICS</span></span>
+                    <span class="logo-sub">National Institute of Technology Patna</span>
+                </div>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -246,7 +320,13 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-section">
-                <h4 class="footer-logo">RO<span>BOTICS</span></h4>
+                <a href="index.html" class="logo-wrapper" style="margin-bottom: 20px;">
+                    <img src="images/background/logo.png" alt="Robotics Club NIT Patna" class="nav-logo">
+                    <div class="logo-text">
+                        <span class="logo-main">RO<span>BOTICS</span></span>
+                        <span class="logo-sub">National Institute of Technology Patna</span>
+                    </div>
+                </a>
                 <p>Empowering students to build the future of robotics and automation at NIT Patna.</p>
                 <div class="social-icons">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -284,6 +364,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
+    <script src="js/intro.js"></script>
     <script src="js/main.js"></script>
     <script src="js/home.js"></script>
 </body>
