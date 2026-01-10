@@ -1,0 +1,305 @@
+/* Cinematic Intro Styles */
+
+/* Full-screen intro container */
+#cinematic-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Canvas for interactive mesh background */
+#mesh-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Film grain noise overlay */
+#film-grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E");
+    pointer-events: none;
+    animation: grainMove 8s steps(10) infinite;
+}
+
+@keyframes grainMove {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-5%, -10%);
+    }
+
+    20% {
+        transform: translate(-15%, 5%);
+    }
+
+    30% {
+        transform: translate(7%, -25%);
+    }
+
+    40% {
+        transform: translate(-5%, 25%);
+    }
+
+    50% {
+        transform: translate(-15%, 10%);
+    }
+
+    60% {
+        transform: translate(15%, 0%);
+    }
+
+    70% {
+        transform: translate(0%, 15%);
+    }
+
+    80% {
+        transform: translate(3%, 35%);
+    }
+
+    90% {
+        transform: translate(-10%, 10%);
+    }
+}
+
+/* Typography container */
+#intro-typography {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: 3;
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Word containers */
+.intro-word {
+    display: inline-block;
+    margin: 0 15px;
+    font-family: 'Montserrat', 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+/* Individual letters */
+.intro-letter {
+    display: inline-block;
+    position: relative;
+}
+
+/* Color themes for words */
+.word-national .intro-letter {
+    color: #0066cc;
+}
+
+.word-institute .intro-letter {
+    color: #00aaff;
+}
+
+.word-technology .intro-letter {
+    color: #89CFF0;
+}
+
+.word-patna .intro-letter {
+    color: #ffffff;
+}
+
+/* Highlighted letters (N, I, T, P) */
+.intro-letter.highlight {
+    font-weight: 900;
+    text-shadow: 0 0 20px currentColor;
+}
+
+/* Branding reveal container - Elegant, zero glass */
+#branding-reveal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Minimal gap for unity */
+    width: 100vw;
+    /* Ensure it covers full width for centering */
+    pointer-events: none;
+}
+
+/* Logo and Robotics Club text on SAME LINE */
+#logo-robotics-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Ultimate tight spacing for cohesion */
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+/* Logo container */
+#intro-logo-container {
+    flex-shrink: 0;
+}
+
+#intro-logo {
+    width: 150px;
+    /* Balanced, elegant scale */
+    height: auto;
+    filter: drop-shadow(0 0 25px rgba(0, 243, 255, 0.4));
+}
+
+/* Robotics Club text - Understated and classy */
+#robotics-club-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #ff00cc;
+    text-shadow: 0 0 15px rgba(255, 0, 204, 0.3);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* NITP text - stays visible */
+#nitp-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.2rem, 7vw, 3.8rem);
+    font-weight: 900;
+    letter-spacing: 0.3em;
+    color: #00f3ff;
+    text-shadow: 0 0 25px rgba(0, 243, 255, 0.4);
+    margin-top: 2px;
+    transition: all 0.5s ease;
+}
+
+/* Liquid wavy transition */
+#wavy-transition {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#wavy-mask {
+    width: 100%;
+    height: 100%;
+}
+
+/* Main page content - initially hidden during intro */
+body.intro-active .navbar,
+body.intro-active main,
+body.intro-active footer,
+body.intro-active .hero-slider {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/* Ensure no display:none to prevent layout jumps/slider glitches */
+body.intro-complete .navbar,
+body.intro-complete main,
+body.intro-complete footer,
+body.intro-complete .hero-slider {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transition: opacity 1.2s ease-in-out;
+}
+
+body.intro-active {
+    overflow: hidden;
+    background: #050505 !important;
+}
+
+/* Force scroll to top when complete */
+body.intro-complete {
+    overflow: auto;
+}
+
+body.intro-complete #cinematic-intro {
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    #intro-logo {
+        width: 320px;
+    }
+
+    #robotics-club-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-word {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        margin: 0 8px;
+    }
+
+    #logo-robotics-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #intro-logo {
+        width: 200px;
+    }
+
+    #robotics-club-text {
+        font-size: 1.8rem;
+    }
+
+    #nitp-text {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-word {
+        font-size: clamp(1.2rem, 3.5vw, 2rem);
+        margin: 0 5px;
+    }
+
+    #intro-logo {
+        width: 150px;
+    }
+
+    #robotics-club-text {
+        font-size: 1.4rem;
+    }
+
+    #nitp-text {
+        font-size: clamp(1.8rem, 4.5vw, 3rem);
+    }
+}

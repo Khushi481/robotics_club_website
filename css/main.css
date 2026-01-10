@@ -139,17 +139,56 @@ img {
     /* No more shrinking */
 }
 
-.logo {
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.nav-logo {
+    height: 65px;
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.5));
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-main {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 900;
     color: var(--text-main);
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    line-height: 1;
 }
 
-.logo span {
+.logo-main span {
     color: var(--primary-neon);
+}
+
+.logo-sub {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+.logo {
+    display: none;
+    /* Hide old logo style if any remains */
 }
 
 .nav-links {
@@ -789,6 +828,17 @@ img {
     margin-bottom: 15px;
     position: relative;
     z-index: 1;
+}
+
+.achievement.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 0;
+    /* Removed glass effect as requested */
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
 }
 
 .achievement-date {

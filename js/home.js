@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSlides = slides.length;
     let currentIndex = 0;
 
-    // Animation Config
-    const durationIn = 1.0;
-    const durationOut = 0.8;
-    const holdTime = 3.5; // Time slide stays visible
+    // Animation Config - Snappier transitions
+    const durationIn = 0.8;
+    const durationOut = 0.6;
+    const holdTime = 2.5; // Decreased from 3.5 for faster changes
 
     // Initial Setup: Hide all, Show first slide elements immediately
     slides.forEach((slide, i) => {
@@ -67,13 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.set(nextRobot, { x: 50, opacity: 0 });
 
         tl.to(nextRobot, { x: 0, opacity: 1, duration: durationIn, ease: "power2.out" }, "-=0.2")
-            .to(nextTriangle, { scale: 1, rotation: 15, opacity: 0.6, duration: durationIn, ease: "back.out(1.7)" }, "<0.2")
+            .to(nextTriangle, { scale: 1, rotation: 15, opacity: 0.6, duration: durationIn, ease: "power3.out" }, "<0.2")
             .to(nextText, { y: 0, opacity: 1, duration: durationIn, ease: "power2.out" }, "<0.2");
 
     }
 
-    // Start the loop
-    gsap.delayedCall(holdTime, nextSlide);
+    // Header check: if intro is active, wait for it.
+    if (document.body.classList.contains('intro-active')) {
+        document.addEventListener('introFinished', () => {
+            gsap.delayedCall(holdTime, nextSlide);
+        });
+    } else {
+        // Start the loop immediately if no intro
+        gsap.delayedCall(holdTime, nextSlide);
+    }
 
 
 
