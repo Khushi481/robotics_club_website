@@ -1,5 +1,58 @@
 /* components.css - Cyberpunk Components */
 
+/* ==========================================================================
+   GLOBAL HERO SECTION (Standard Banner)
+   ========================================================================== */
+
+.about-hero {
+    position: relative;
+    height: 45vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.1) brightness(0.5);
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), var(--bg-dark));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #fff;
+    letter-spacing: -1px;
+    font-family: var(--font-heading);
+    text-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
+}
+
 /* Buttons */
 .btn-cta {
     display: inline-block;
@@ -14,7 +67,7 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
     z-index: 1;
 }
 
@@ -369,7 +422,7 @@
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -557,7 +610,7 @@
     border: 1px solid var(--border-glass);
     color: var(--text-dim);
     border-radius: 30px;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
 }
@@ -584,7 +637,7 @@
     color: var(--text-main);
     border-radius: 8px;
     outline: none;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
 }
 
 /* Sections */
@@ -833,7 +886,7 @@
     border-radius: 12px;
     overflow: hidden;
     height: 250px;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
 }
 
 .past-event-item img {
@@ -1056,7 +1109,7 @@
     border: 1px solid var(--border-glass);
     color: var(--text-dim);
     border-radius: 30px;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
     transition: all 0.3s ease;
     font-weight: 600;
 }
@@ -1108,6 +1161,49 @@
     background: rgba(0, 243, 255, 0.02);
     border: 1px solid rgba(0, 243, 255, 0.1);
 }
+
+/* Events Page - Calendar Preview */
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.calendar-preview-trigger {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--border-glass);
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
+    transition: all 0.3s ease;
+}
+
+.calendar-preview-trigger:hover {
+    background: rgba(0, 243, 255, 0.1);
+    border-color: var(--secondary-neon);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.calendar-img-small {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: grayscale(1) invert(1);
+    border: 1px solid var(--secondary-neon);
+}
+
+.calendar-preview-trigger span {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
 
 .alumni-msg {
     font-size: 1.4rem;

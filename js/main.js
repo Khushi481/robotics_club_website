@@ -27,4 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+
+    // Global Hero Animations (for standardized banners)
+    if (typeof gsap !== 'undefined') {
+        const heroTitle = document.querySelector('.hero-title');
+        const heroImg = document.querySelector('.hero-bg-img');
+
+        if (heroTitle) {
+            gsap.from(heroTitle, {
+                duration: 1.5,
+                y: 100,
+                opacity: 0,
+                ease: 'power4.out',
+                delay: 0.2
+            });
+        }
+
+        if (heroImg) {
+            gsap.from(heroImg, {
+                duration: 2,
+                scale: 1.2,
+                filter: 'grayscale(1) brightness(0)',
+                ease: 'power2.out'
+            });
+        }
+    }
 });
