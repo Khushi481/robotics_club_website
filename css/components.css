@@ -1,5 +1,58 @@
 /* components.css - Cyberpunk Components */
 
+/* ==========================================================================
+   GLOBAL HERO SECTION (Standard Banner)
+   ========================================================================== */
+
+.about-hero {
+    position: relative;
+    height: 45vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.1) brightness(0.5);
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), var(--bg-dark));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #fff;
+    letter-spacing: -1px;
+    font-family: var(--font-heading);
+    text-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
+}
+
 /* Buttons */
 .btn-cta {
     display: inline-block;
@@ -14,7 +67,7 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
     z-index: 1;
 }
 
@@ -283,9 +336,10 @@
     height: 500px;
     filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.9));
     position: relative;
-    left: -110px;
-    /* Shifted more to compensate for massive size */
-    top: 20px;
+    left: 0;
+    /* Centered */
+    top: -40px;
+    /* Moved up as requested */
     transform: rotate(-22deg);
     /* steeper tilt */
     pointer-events: none;
@@ -369,7 +423,7 @@
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -491,4 +545,755 @@
         height: 40px;
         font-size: 1rem;
     }
+
+    <<<<<<< HEAD=======
+}
+
+/* ==========================================================================
+   Events Page Styles
+   ========================================================================== */
+
+.events-main {
+    padding: 60px 0;
+    background: #000;
+}
+
+.page-header {
+    padding-top: 140px;
+    /* Clearance for fixed navbar (80px) + spacing */
+    padding-bottom: 20px;
+    text-align: center;
+    background: #000;
+}
+
+.neon-title {
+    font-size: 3.5rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, var(--secondary-neon), var(--primary-neon));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.3));
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Controls: Filter & Sort */
+.events-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.filter-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid var(--border-glass);
+    color: var(--text-dim);
+    border-radius: 30px;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--secondary-neon);
+    color: #000;
+    border-color: var(--secondary-neon);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+.sort-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-main);
+}
+
+.sort-select {
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-glass);
+    color: var(--text-main);
+    border-radius: 8px;
+    outline: none;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
+}
+
+/* Sections */
+.events-section {
+    margin-bottom: 80px;
+}
+
+.section-heading {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 4px solid var(--primary-neon);
+    padding-left: 20px;
+}
+
+.section-heading i {
+    color: var(--primary-neon);
+    font-size: 1.8rem;
+}
+
+/* Event Card V2 */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.event-card-v2 {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card-v2:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary-neon);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2);
+}
+
+.event-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card-v2:hover .event-image img {
+    transform: scale(1.1);
+}
+
+.event-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--secondary-neon);
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.event-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-date-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255, 0, 204, 0.1);
+    border: 1px solid var(--primary-neon);
+    color: var(--primary-neon);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+.event-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.event-meta span i {
+    color: var(--secondary-neon);
+    width: 20px;
+}
+
+.event-info p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-register {
+    margin-top: auto;
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--secondary-neon);
+    color: var(--secondary-neon);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background: var(--secondary-neon);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+/* Ongoing Projects area */
+.ongoing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.ongoing-project-card {
+    position: relative;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+}
+
+.ongoing-project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+}
+
+.status-badge {
+    background: #00ff00;
+    color: #000;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.progress-container {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    height: 8px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon));
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--secondary-neon);
+}
+
+.progress-text {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    font-size: 0.8rem;
+    color: var(--secondary-neon);
+}
+
+/* Past Gallery */
+.past-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.past-event-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 250px;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
+}
+
+.past-event-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.past-info {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.past-event-item:hover .past-info {
+    opacity: 1;
+}
+
+.past-event-item:hover img {
+    transform: scale(1.1);
+}
+
+.past-date {
+    color: var(--primary-neon);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   Team Page Styles - Cyber-Blob Aesthetic
+   ========================================================================== */
+
+.team-main {
+    padding: 60px 0;
+    background: #000;
+}
+
+.team-section {
+    margin-bottom: 100px;
+}
+
+/* Faculty Section */
+.faculty-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid var(--border-glass);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.faculty-blob-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.blob-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.primary-blob {
+    background: var(--primary-neon);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    filter: blur(20px);
+    opacity: 0.4;
+}
+
+.secondary-blob {
+    background: var(--secondary-neon);
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    filter: blur(20px);
+    opacity: 0.4;
+}
+
+.faculty-blob-container img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    filter: grayscale(100%) contrast(1.1);
+    transition: all 0.5s ease;
+}
+
+.faculty-card:hover .faculty-blob-container img {
+    filter: grayscale(0%) contrast(1);
+    border-radius: 50%;
+}
+
+.faculty-info h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.role-tag {
+    color: var(--secondary-neon);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.designation {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.advisor-quote {
+    font-style: italic;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding-left: 20px;
+    border-left: 3px solid var(--primary-neon);
+}
+
+/* Team Blob Grid (Core Members) */
+.team-blob-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.member-blob-card {
+    text-align: center;
+    position: relative;
+}
+
+.blob-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 20px;
+}
+
+.member-blob-card img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+    filter: grayscale(100%) contrast(1.2);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.member-blob-card:hover img {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.05) rotate(3deg);
+    border-radius: 50%;
+}
+
+.member-blob-card:hover .blob-bg {
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+
+.member-compact-info h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.member-role {
+    display: block;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.member-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.member-socials a {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.member-socials a:hover {
+    color: var(--secondary-neon);
+}
+
+/* Specialized Teams */
+.specialization-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.spec-tab {
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    color: var(--text-dim);
+    border-radius: 30px;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.spec-tab.active,
+.spec-tab:hover {
+    background: var(--primary-neon);
+    color: #fff;
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 15px rgba(255, 0, 204, 0.4);
+}
+
+.members-grid-simple {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.simple-member-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.simple-member-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+    border-color: var(--secondary-neon);
+}
+
+.simple-member-card h4 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.simple-member-card p {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
+
+/* Alumni Scroller */
+.alumni-scroller {
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba(0, 243, 255, 0.02);
+    border: 1px solid rgba(0, 243, 255, 0.1);
+}
+
+/* Events Page - Calendar Preview */
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.calendar-preview-trigger {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--border-glass);
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
+    transition: all 0.3s ease;
+}
+
+.calendar-preview-trigger:hover {
+    background: rgba(0, 243, 255, 0.1);
+    border-color: var(--secondary-neon);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.calendar-img-small {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: grayscale(1) invert(1);
+    border: 1px solid var(--secondary-neon);
+}
+
+.calendar-preview-trigger span {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+
+.alumni-msg {
+    font-size: 1.4rem;
+    color: #fff;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.alumni-name {
+    color: var(--secondary-neon);
+    font-weight: 700;
+}
+
+/* Responsive Team Adjustments */
+@media (max-width: 992px) {
+    .faculty-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advisor-quote {
+        border-left: none;
+        border-top: 3px solid var(--primary-neon);
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .neon-title {
+        font-size: 2.5rem;
+    }
+
+    .ongoing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .faculty-blob-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .specialization-tabs {
+        flex-wrap: wrap;
+    }
+}
+
+/* ==========================================================================
+   DECORATIVE GLOW ELEMENTS (Pills)
+   ========================================================================== */
+
+.glow-pill {
+    position: absolute;
+    width: 45px;
+    height: 140px;
+    background: linear-gradient(180deg, #800080 0%, #008080 100%);
+    border-radius: 50px;
+    z-index: 10;
+    /* Put it above slides and sections */
+    pointer-events: none;
+    opacity: 0.9;
+    /* Very visible */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glow-pill--small {
+    width: 20px;
+    height: 60px;
+}
+
+.glow-pill--large {
+    width: 60px;
+    height: 180px;
+}
+
+.glow-pill--magenta {
+    background: linear-gradient(180deg, var(--primary-neon) 0%, #4a0040 100%);
+}
+
+.glow-pill--cyan {
+    background: linear-gradient(180deg, var(--secondary-neon) 0%, #001B79 100%);
+    >>>>>>>28f7c95b46aa86597a7acb6b68d5f1be2c450a99
 }

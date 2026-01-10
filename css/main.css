@@ -29,6 +29,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url('../images/background/mouse-cursor.svg'), auto;
 }
 
 .no-transition * {
@@ -49,6 +50,20 @@ body {
     background: var(--bg-gradient);
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+input,
+textarea {
+    cursor: url('../images/background/text-cursor.svg'), text;
 }
 
 /* Custom Scrollbar */
@@ -73,7 +88,7 @@ a {
     text-decoration: none;
     color: inherit;
     transition: color 0.3s ease;
-    /* Avoid var with complex easing on load */
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
 }
 
 ul {
@@ -185,7 +200,7 @@ img {
 
 .hamburger {
     display: none;
-    cursor: pointer;
+    cursor: url('../images/background/pointing-cursor.svg'), pointer;
 }
 
 /* --- HERO SLIDER STYLES (Stacked & Staggered) --- */

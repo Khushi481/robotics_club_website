@@ -8,6 +8,7 @@
     <!-- CSS Links -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/about-page.css">
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,20 +46,224 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container">
-            <h1 class="neon-title">About ROBOTICS</h1>
-            <p style="color: var(--text-dim);">Pioneering the next generation of robotics.</p>
+    <!-- Banner Hero (Half Height) -->
+    <header class="about-hero">
+        <div class="hero-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=80"
+            alt="Robotics Lab" class="hero-bg-img">
+        <div class="container hero-content">
+            <h1 class="hero-title">About us</h1>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <div class="container" style="min-height: 40vh;">
-            <!-- About Content -->
-            <p style="color: var(--text-dim);">[About Content Placeholder]</p>
+    <main style="position: relative; overflow: hidden;">
+        <!-- Decorative Pills -->
+        <div class="glow-pill glow-pill--cyan" style="top: 25%; right: 2%; opacity: 0.15; transform: rotate(-15deg);">
         </div>
+        <div class="glow-pill glow-pill--magenta"
+            style="top: 55%; left: -20px; opacity: 0.1; transform: rotate(30deg);"></div>
+        <div class="glow-pill glow-pill--small" style="bottom: 15%; right: 5%; opacity: 0.2;"></div>
+
+        <!-- Introduction Section (Reference Style) -->
+        <section class="about-intro section-padding" style="position: relative; overflow: hidden;">
+            <div class="glow-pill glow-pill--cyan" style="top: 10%; left: 5%; opacity: 0.12;"></div>
+
+            <div class="container">
+                <div class="intro-top">
+                    <div class="intro-heading-area">
+                        <span class="tag-small"><span class="dot"></span> ABOUT US</span>
+                        <h2 class="main-heading">Introduction To Best <br> Robotics Club!</h2>
+                    </div>
+                    <div class="intro-description-area">
+                        <div class="desc-col">
+                            <p>Founded with a vision to revolutionize the technical landscape at NIT Patna, the Robotics
+                                Club has grown from a small group of enthusiasts into a powerhouse of innovation and
+                                engineering excellence.</p>
+                        </div>
+                        <div class="desc-col">
+                            <p>We provide a collaborative environment where students can explore the boundaries of
+                                robotics, automation, and artificial intelligence, turning theoretical knowledge into
+                                real-world impact.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="feature-cards-grid">
+                    <div class="feature-card highlight-card">
+                        <div class="icon-box mission-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To foster a culture of technical innovation and empower students through hands-on robotics
+                            education and competitive challenges.</p>
+                    </div>
+                    <div class="feature-card highlight-card">
+                        <div class="icon-box vision-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To become a leading hub for robotics research and development, producing the next generation
+                            of global technology leaders.</p>
+                    </div>
+                    <div class="feature-card highlight-card">
+                        <div class="icon-box objective-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Club Objectives</h3>
+                        <p>Achieving excellence in national competitions, conducting impactful workshops, and developing
+                            cutting-edge autonomous systems.</p>
+                    </div>
+                </div>
+
+                <!-- Overlapping Images Showcase -->
+                <div class="images-overlap-showcase">
+                    <div class="image-main">
+                        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80"
+                            alt="Tech Interaction">
+                    </div>
+                    <div class="image-floating">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80"
+                            alt="Robotic Arm Detail">
+                        <div class="play-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History & establishment -->
+        <section class="history-section section-padding bg-dark-secondary"
+            style="position: relative; overflow: hidden;">
+            <div class="glow-pill glow-pill--magenta" style="top: 10%; left: -30px; opacity: 0.15;"></div>
+
+            <div class="container">
+                <div class="history-grid">
+                    <div class="history-content">
+                        <h2 class="section-heading-cyber">Club History</h2>
+                        <p>Established in 2015, the Robotics Club of NIT Patna was formed by a passionate group of
+                            students who wanted to bridge the gap between classroom learning and practical robotics
+                            applications. Over the years, we have transitioned from simple line-followers to advanced
+                            autonomous rovers and drones.</p>
+                        <p>Our journey has been marked by numerous accolades in national events like Inter-IIT Tech
+                            Meet, Technex, and various robotics championships across India.</p>
+                    </div>
+                    <div class="history-highlights glass-modern">
+                        <div class="stat-item">
+                            <span class="stat-num">2015</span>
+                            <span class="stat-label">Year Founded</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">50+</span>
+                            <span class="stat-label">Major Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">100+</span>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities & Focus Areas -->
+        <section class="activities-section section-padding">
+            <div class="container">
+                <h2 class="section-heading-center">What We Do</h2>
+                <div class="activities-grid">
+                    <div class="activity-box">
+                        <div class="icon-box">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Competitions</h3>
+                        <p>Participating and winning in national-level robotics challenges, including combat bots and
+                            autonomous navigation.</p>
+                    </div>
+                    <div class="activity-box">
+                        <div class="icon-box">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Workshops</h3>
+                        <p>Regular hands-on sessions on Arduino, ROS, CAD modeling, and embedded systems for all skill
+                            levels.</p>
+                    </div>
+                    <div class="activity-box">
+                        <div class="icon-box">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Research</h3>
+                        <p>Exploring advanced fields like Swarm Robotics, Computer Vision, and AI-driven automation
+                            systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infrastructure & Lab Facilities -->
+        <section class="infra-section section-padding bg-dark-secondary" style="position: relative; overflow: hidden;">
+            <div class="glow-pill glow-pill--cyan" style="bottom: 5%; right: -20px; opacity: 0.15;"></div>
+
+            <div class="container">
+                <div class="infra-flex">
+                    <div class="infra-info">
+                        <h2 class="section-heading-cyber">Lab Facilities</h2>
+                        <p>Our state-of-the-art laboratory at NIT Patna provides students with the tools and resources
+                            needed to bring their ideas to life.</p>
+                        <ul class="infra-list">
+                            <li><i class="fas fa-check-circle"></i> High-end 3D Printing Station</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced PCB Prototyping Lab</li>
+                            <li><i class="fas fa-check-circle"></i> Dedicated Drone Testing Zone</li>
+                            <li><i class="fas fa-check-circle"></i> High-Performance Computing Cluster</li>
+                        </ul>
+                    </div>
+                    <div class="infra-gallery">
+                        <div class="infra-card-v3">
+                            <img src="images/about/infra-placeholder.svg" alt="Lab Infrastructure">
+                            <div class="infra-overlay-text">The Innovation Hub</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Club Timeline / Milestones -->
+        <section class="timeline-section section-padding" style="position: relative; overflow: hidden;">
+            <div class="glow-pill glow-pill--large" style="bottom: -50px; left: 10%; opacity: 0.15;"></div>
+            <div class="glow-pill glow-pill--magenta"
+                style="top: 40%; right: -20px; opacity: 0.1; transform: rotate(15deg);"></div>
+
+            <div class="container">
+                <h2 class="section-heading-center">Our Milestones</h2>
+                <div class="timeline-visual">
+                    <div class="timeline-line"></div>
+                    <div class="milestone left" data-year="2015">
+                        <div class="milestone-content glass-modern">
+                            <h4>Founded</h4>
+                            <p>Robotics Club was officially established at NIT Patna.</p>
+                        </div>
+                    </div>
+                    <div class="milestone right" data-year="2018">
+                        <div class="milestone-content glass-modern">
+                            <h4>National Finals</h4>
+                            <p>Reached the grand finals of the National Robotics Championship.</p>
+                        </div>
+                    </div>
+                    <div class="milestone left" data-year="2021">
+                        <div class="milestone-content glass-modern">
+                            <h4>AI Research Lab</h4>
+                            <p>Launched the dedicated AI and Machine Learning research wing.</p>
+                        </div>
+                    </div>
+                    <div class="milestone right" data-year="2024">
+                        <div class="milestone-content glass-modern">
+                            <h4>Global Recognition</h4>
+                            <p>Project Sentinel featured in international tech exhibitions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -99,7 +304,10 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
 </body>
 
 </html>
