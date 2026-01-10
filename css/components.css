@@ -1257,3 +1257,39 @@
         flex-wrap: wrap;
     }
 }
+
+/* ==========================================================================
+   DECORATIVE GLOW ELEMENTS (Pills)
+   ========================================================================== */
+
+.glow-pill {
+    position: absolute;
+    width: 45px;
+    height: 140px;
+    background: linear-gradient(180deg, #800080 0%, #008080 100%);
+    border-radius: 50px;
+    z-index: 10;
+    /* Put it above slides and sections */
+    pointer-events: none;
+    opacity: 0.9;
+    /* Very visible */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glow-pill--small {
+    width: 20px;
+    height: 60px;
+}
+
+.glow-pill--large {
+    width: 60px;
+    height: 180px;
+}
+
+.glow-pill--magenta {
+    background: linear-gradient(180deg, var(--primary-neon) 0%, #4a0040 100%);
+}
+
+.glow-pill--cyan {
+    background: linear-gradient(180deg, var(--secondary-neon) 0%, #001B79 100%);
+}
