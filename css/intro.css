@@ -123,7 +123,7 @@
 }
 
 .word-patna .intro-letter {
-    color: #ffffff;
+    color: #89CFF0;
 }
 
 /* Highlighted letters (N, I, T, P) */
@@ -169,7 +169,7 @@
 }
 
 #intro-logo {
-    width: 150px;
+    width: 220px;
     /* Balanced, elegant scale */
     height: auto;
     filter: drop-shadow(0 0 25px rgba(0, 243, 255, 0.4));
@@ -178,7 +178,7 @@
 /* Robotics Club text - Understated and classy */
 #robotics-club-text {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
     letter-spacing: 0.15em;
     color: #ff00cc;
@@ -194,7 +194,7 @@
     font-weight: 900;
     letter-spacing: 0.3em;
     color: #00f3ff;
-    text-shadow: 0 0 25px rgba(0, 243, 255, 0.4);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.8), 0 0 20px rgba(0, 243, 255, 0.6), 0 0 40px rgba(0, 243, 255, 0.4);
     margin-top: 2px;
     transition: all 0.5s ease;
 }
@@ -257,7 +257,7 @@ body.intro-complete #cinematic-intro {
     }
 
     #robotics-club-text {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 }
 
@@ -277,7 +277,7 @@ body.intro-complete #cinematic-intro {
     }
 
     #robotics-club-text {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
 
     #nitp-text {
@@ -296,7 +296,7 @@ body.intro-complete #cinematic-intro {
     }
 
     #robotics-club-text {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
     #nitp-text {

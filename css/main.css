@@ -50,6 +50,30 @@ body {
     background: var(--bg-gradient);
     min-height: 100vh;
     overflow-x: hidden;
+    overflow-wrap: break-word;
+    /* Prevent text cutting */
+    word-wrap: break-word;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h4 {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+h5,
+h6 {
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 h1,
@@ -130,7 +154,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 100px;
     /* Keep height constant to prevent glitchy reflow */
 }
 
@@ -152,7 +176,7 @@ img {
 }
 
 .nav-logo {
-    height: 65px;
+    height: 85px;
     width: auto;
     filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.5));
 }

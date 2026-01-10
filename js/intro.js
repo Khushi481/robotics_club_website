@@ -143,8 +143,8 @@ class CinematicIntro {
                     y: targetY - startPos.y,
                     scale: 1.2,
                     fontWeight: 900,
-                    duration: 1.3,
-                    ease: 'expo.inOut', // Highest quality smooth motion
+                    duration: 2.0,
+                    ease: 'power3.inOut', // Highest quality smooth motion
                     color: '#00f3ff',
                     textShadow: '0 0 30px #00f3ff',
                     zIndex: 100
@@ -173,7 +173,8 @@ class CinematicIntro {
 
         // 1. Move everything TOGETHER
         tl.to('.intro-letter.highlight', {
-            y: -100, // Move kinetic letters up as they fade
+            y: 0, // Stay in place to merge
+            scale: 1, // Scale down to match static text
             opacity: 0,
             duration: 0.8,
             ease: 'expo.inOut'

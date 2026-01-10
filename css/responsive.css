@@ -68,6 +68,11 @@
         font-size: 1.5rem;
     }
 
+    .nav-logo {
+        height: 60px;
+        /* Smaller on mobile to fit */
+    }
+
 
     /* --- Hero Slider (Compact "Left-Right" Layout) --- */
     /* Heading stays Left, Robot stays Right. Allow overlap. */
@@ -89,7 +94,7 @@
     }
 
     .slide-content h1 {
-        font-size: 2.8rem;
+        font-size: clamp(2rem, 5vw, 3rem);
         /* Readable large font */
         margin-bottom: 20px;
         /* Stronger shadow to ensure readability over robot image */
@@ -179,11 +184,11 @@
 
     /* Responsive heading sizes to prevent overflow */
     .slide-content h1 {
-        font-size: 2rem;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
     }
 
     .section-title {
-        font-size: 2rem !important;
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
     }
 
     .home-about-section .section-title,
@@ -191,7 +196,7 @@
     .highlights-section .section-title,
     .upcoming-event-section .section-title,
     .achievements-section .section-title {
-        font-size: 2rem !important;
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
     }
 
     .event-details h3 {
