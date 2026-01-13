@@ -22,17 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Staggered Entry for Competition Cards
-    gsap.from('.comp-card', {
-        scrollTrigger: {
-            trigger: '.competitions-grid',
-            start: 'top 95%', // Trigger earlier (closer to bottom of screen)
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power2.out'
+    // Individual Entry for Competition Cards (Fixing glitch)
+    const cards = document.querySelectorAll('.comp-card');
+    cards.forEach((card, index) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 90%', // Trigger when card top hits 90% of viewport
+                toggleActions: 'play none none reverse' // Play on enter, reverse on leave up
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+    });
+
+    // Refresh ScrollTrigger on load to ensure image heights are calculated
+    window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
     });
 
     // Timeline Animation

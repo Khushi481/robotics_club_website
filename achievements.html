@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achievements | ROBOTICS</title>
+    <title>Achievements | Robotics Club NITP</title>
     <!-- CSS Links -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/about-page.css">
     <link rel="stylesheet" href="css/achievements.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -52,251 +51,254 @@
         </div>
     </nav>
 
-    <!-- Banner Hero (Half Height) -->
+    <!-- Banner Hero -->
     <header class="about-hero">
         <div class="hero-overlay"></div>
         <img src="https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?auto=format&fit=crop&w=1400&q=80"
-            alt="Robotics Excellence" class="hero-bg-img">
+            alt="Achievements" class="hero-bg-img">
         <div class="container hero-content">
             <h1 class="hero-title">Achievements</h1>
-            <p class="hero-subtitle">The milestones that define our journey in robotics and innovation.</p>
+            <p class="hero-subtitle">Celebrating our victories, research, and milestones.</p>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main style="position: relative; overflow: hidden;">
-        <!-- Decorative Pills -->
-        <div class="glow-pill glow-pill--large" style="top: 20%; left: -30px; opacity: 0.1;"></div>
-        <div class="glow-pill glow-pill--magenta"
-            style="top: 45%; right: -20px; opacity: 0.15; transform: rotate(-30deg);"></div>
-        <div class="glow-pill glow-pill--cyan" style="bottom: 20%; left: 10%; opacity: 0.1;"></div>
-        <div class="glow-pill glow-pill--small" style="top: 60%; right: 5%; opacity: 0.12;"></div>
+    <main>
 
-        <!-- Floating Decoration -->
-        <div class="decorative-trophy">
-            <i class="fas fa-trophy"></i>
-        </div>
-
-        <!-- Achievement Statistics -->
-        <section class="stats-section section-padding">
+        <!-- 1. Statistics Section -->
+        <section class="stats-section">
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <span class="stat-number" data-target="20">0</span>
+                        <span class="stat-number" data-target="25">0</span>
                         <span class="stat-label">Competitions Won</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" data-target="65">0</span>
+                        <span class="stat-number" data-target="80">0</span>
                         <span class="stat-label">Projects Completed</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" data-target="12">0</span>
+                        <span class="stat-number" data-target="15">0</span>
                         <span class="stat-label">Research Papers</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" data-target="150">0</span>
-                        <span class="stat-label">Team Members</span>
+                        <span class="stat-number" data-target="200">0</span>
+                        <span class="stat-label">Active Members</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Competition Wins -->
-        <section class="competitions-section section-padding">
+        <!-- 2. Competition Wins (Horizontal Layout) -->
+        <section class="competitions-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="tag-small"><span class="dot"></span> VICTORIES</span>
-                    <h2 class="main-heading">National Competition <br> Winners</h2>
+                <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                    <span class="tag-small" style="color: var(--secondary-neon);"><span class="dot"
+                            style="background: var(--secondary-neon);"></span> VICTORIES</span>
+                    <h2 class="main-heading">Competition Wins</h2>
                 </div>
 
                 <div class="competitions-grid">
-                    <!-- Card 1 -->
+                    <!-- Win 1 -->
                     <div class="comp-card">
                         <div class="comp-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1563206767-5b18f218e7de?auto=format&fit=crop&w=600&q=80"
-                                alt="TechFest 1st Prize" class="comp-img">
+                            <img src="https://images.unsplash.com/photo-1563206767-5b18f218e7de?auto=format&fit=crop&w=800&q=80"
+                                alt="TechFest Winners" class="comp-img">
                         </div>
                         <div class="comp-content">
-                            <span class="comp-year">2024</span>
-                            <span class="comp-prize">1st Prize - NIT TechFest</span>
-                            <h3>Autonomous Maze Solver</h3>
-                            <div class="comp-members"><i class="fas fa-users"></i> Team Alpha</div>
+                            <div class="comp-header">
+                                <span class="comp-year">2024</span>
+                                <span class="comp-prize"><i class="fas fa-trophy"></i> 1st Prize</span>
+                            </div>
+                            <h3 class="comp-title">Autonomous Maze Solver @ IIT TechFest</h3>
+                            <p style="color: #ccc; margin-bottom: 20px;">
+                                Our autonomous bot cleared the maze in record time (45s) using advanced DFS algorithms
+                                and IR mapping.
+                            </p>
+                            <div class="comp-team">
+                                <i class="fas fa-users"></i> Team: Alpha Squad (Aarav, Priya, Rahul)
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
+                    <!-- Win 2 -->
                     <div class="comp-card">
                         <div class="comp-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
-                                alt="RoboWar Championship" class="comp-img">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+                                alt="RoboWar Champions" class="comp-img">
                         </div>
                         <div class="comp-content">
-                            <span class="comp-year">2023</span>
-                            <span class="comp-prize">Overall Champions</span>
-                            <h3>Inter-College RoboWar</h3>
-                            <div class="comp-members"><i class="fas fa-users"></i> Team Titan</div>
+                            <div class="comp-header">
+                                <span class="comp-year">2023</span>
+                                <span class="comp-prize"><i class="fas fa-medal"></i> Gold Medal</span>
+                            </div>
+                            <h3 class="comp-title">National RoboWar Championship</h3>
+                            <p style="color: #ccc; margin-bottom: 20px;">
+                                "Titan", our 60kg combat robot, remained undefeated across 8 rounds, showcasing superior
+                                hydraulic flipping mechanisms.
+                            </p>
+                            <div class="comp-team">
+                                <i class="fas fa-users"></i> Team: Metal Heads (Vikram, Sameer, Aditi)
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
+                    <!-- Win 3 -->
                     <div class="comp-card">
                         <div class="comp-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
+                            <img src="https://images.unsplash.com/photo-1531206718-06bc8634354b?auto=format&fit=crop&w=800&q=80"
                                 alt="Innovation Award" class="comp-img">
                         </div>
                         <div class="comp-content">
-                            <span class="comp-year">2023</span>
-                            <span class="comp-prize">Best Innovation</span>
-                            <h3>Swarm Intelligence Drones</h3>
-                            <div class="comp-members"><i class="fas fa-users"></i> Team Hive</div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="comp-card">
-                        <div class="comp-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1531206718-06bc8634354b?auto=format&fit=crop&w=600&q=80"
-                                alt="Robo-Soccer Bronze" class="comp-img">
-                        </div>
-                        <div class="comp-content">
-                            <span class="comp-year">2022</span>
-                            <span class="comp-prize">Bronze Medalist</span>
-                            <h3>National Robo-Soccer</h3>
-                            <div class="comp-members"><i class="fas fa-users"></i> Team Striker</div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="comp-card">
-                        <div class="comp-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80"
-                                alt="Line Follower Excellence" class="comp-img">
-                        </div>
-                        <div class="comp-content">
-                            <span class="comp-year">2022</span>
-                            <span class="comp-prize">Top 10 Finalist</span>
-                            <h3>Line Follower World Cup</h3>
-                            <div class="comp-members"><i class="fas fa-users"></i> Team Tracer</div>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="comp-card">
-                        <div class="comp-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80"
-                                alt="VTOL Design Award" class="comp-img">
-                        </div>
-                        <div class="comp-content">
-                            <span class="comp-year">2021</span>
-                            <span class="comp-prize">Excellence in Design</span>
-                            <h3>SkyHawk VTOL Drone</h3>
-                            <div class="comp-members"><i class="fas fa-users"></i> Team Aero</div>
+                            <div class="comp-header">
+                                <span class="comp-year">2023</span>
+                                <span class="comp-prize"><i class="fas fa-lightbulb"></i> Best Innovation</span>
+                            </div>
+                            <h3 class="comp-title">Smart Agriculture Drone Challenge</h3>
+                            <p style="color: #ccc; margin-bottom: 20px;">
+                                Awarded for "AgroBot", a drone capable of real-time multi-spectral crop analysis and
+                                automated pesticide spraying.
+                            </p>
+                            <div class="comp-team">
+                                <i class="fas fa-users"></i> Team: Green Wings (Ankit, Meera)
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Research Publications -->
-        <section class="research-section section-padding bg-dark-secondary"
-            style="position: relative; overflow: hidden;">
-            <div class="glow-pill glow-pill--cyan" style="top: 20%; right: -10px; opacity: 0.15;"></div>
-
+        <!-- 3. Research Publications -->
+        <section class="research-section">
             <div class="container">
-                <span class="tag-small"><span class="dot"></span> RESEARCH</span>
-                <h2 class="section-heading-cyber">Scientific Publications</h2>
+                <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                    <span class="tag-small" style="color: var(--primary-neon);"><span class="dot"
+                            style="background: var(--primary-neon);"></span> ACADEMIC</span>
+                    <h2 class="main-heading">Research Publications</h2>
+                </div>
 
-                <div class="research-container">
-                    <div class="paper-card">
-                        <h3 class="paper-title">"Decentralized Path Planning for Heterogeneous Swarm Systems"</h3>
-                        <div class="paper-meta">
-                            <span><i class="fas fa-book-open"></i> IEEE Robotics Conference</span>
-                            <span><i class="fas fa-calendar-alt"></i> 2024</span>
-                            <p><i class="fas fa-pen-nib"></i> Vikram Singh, Dr. S. K. Pathak</p>
+                <div class="research-list">
+                    <div class="paper-item">
+                        <div class="paper-info">
+                            <h3>"Decentralized Path Planning for Swarm Robotics"</h3>
+                            <div class="paper-meta">
+                                <span><i class="fas fa-book"></i> IEEE Robotics Journal</span>
+                                <span><i class="fas fa-pen-nib"></i> V. Singh, S. Pathak</span>
+                            </div>
                         </div>
+                        <div class="paper-year">2024</div>
                     </div>
 
-                    <div class="paper-card">
-                        <h3 class="paper-title">"Optimization of Hydraulic Power in Combat Robots"</h3>
-                        <div class="paper-meta">
-                            <span><i class="fas fa-book-open"></i> Journal of Mechanical Systems</span>
-                            <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                            <p><i class="fas fa-pen-nib"></i> Aarav Mehta, Priya Verma</p>
+                    <div class="paper-item">
+                        <div class="paper-info">
+                            <h3>"Optimizing Power Efficiency in Quadruped Robots"</h3>
+                            <div class="paper-meta">
+                                <span><i class="fas fa-book"></i> Int. Conf. on Mechatronics</span>
+                                <span><i class="fas fa-pen-nib"></i> A. Mehta, P. Verma</span>
+                            </div>
                         </div>
+                        <div class="paper-year">2023</div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-info">
+                            <h3>"Computer Vision for Low-Light Obstacle Avoidance"</h3>
+                            <div class="paper-meta">
+                                <span><i class="fas fa-book"></i> Springer AI Series</span>
+                                <span><i class="fas fa-pen-nib"></i> R. Gupta, K. Das</span>
+                            </div>
+                        </div>
+                        <div class="paper-year">2023</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Innovation Grants -->
-        <section class="grants-section section-padding" style="position: relative; overflow: hidden;">
-            <div class="glow-pill glow-pill--magenta"
-                style="bottom: 15%; left: -20px; opacity: 0.12; transform: rotate(-10deg);"></div>
-            <div class="glow-pill glow-pill--small" style="top: 10%; right: 5%; opacity: 0.1;"></div>
-
+        <!-- 4. Innovation Grants -->
+        <section class="grants-section">
             <div class="container">
-                <span class="tag-small"><span class="dot"></span> FUNDING</span>
-                <h2 class="main-heading">Innovation Grants & <br> Institutional Support</h2>
-
+                <h2 class="section-heading-center">Grants & Awards</h2>
                 <div class="grants-grid">
                     <div class="grant-card">
-                        <div class="grant-header">
-                            <span class="grant-amount">₹2.5 Lakhs</span>
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3>TEQIP-III Research Grant</h3>
-                        <p>Awarded for development of "Agricultural Monitoring Rover".</p>
-                        <div class="grant-meta">Organization: NPIU | 2023</div>
+                        <div class="grant-icon"><i class="fas fa-award"></i></div>
+                        <span class="grant-amount">₹2.5 Lakhs</span>
+                        <h3 class="grant-title">TEQIP-III Research Grant</h3>
+                        <span class="grant-org">NPIU Govt. of India | 2023</span>
                     </div>
-
                     <div class="grant-card">
-                        <div class="grant-header">
-                            <span class="grant-amount">₹1.0 Lakhs</span>
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Institutional Seed Funding</h3>
-                        <p>Provided by NIT Patna for "Project Sentinel" autonomous security.</p>
-                        <div class="grant-meta">Organization: NIT Patna | 2024</div>
+                        <div class="grant-icon"><i class="fas fa-university"></i></div>
+                        <span class="grant-amount">₹1.0 Lakhs</span>
+                        <h3 class="grant-title">Seed Funding</h3>
+                        <span class="grant-org">NIT Patna Incubation | 2024</span>
+                    </div>
+                    <div class="grant-card">
+                        <div class="grant-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <span class="grant-amount">$5,000</span>
+                        <h3 class="grant-title">AWS Cloud Credits</h3>
+                        <span class="grant-org">Amazon Web Services | 2024</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Timeline -->
-        <section class="timeline-section section-padding bg-dark-secondary">
+        <!-- 5. Timeline -->
+        <section class="timeline-section">
             <div class="container">
-                <h2 class="section-heading-center">Year-wise Timeline</h2>
-                <div class="achievements-timeline">
-                    <!-- Timeline Item -->
+                <h2 class="section-heading-center">Journey So Far</h2>
+                <div class="timeline-container">
+                    <!-- Item 1 -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content-inner">
                             <span class="timeline-year-label">2024</span>
-                            <h4>World Robotics Summit Selection</h4>
-                            <p>Ranked #1 in national trials for international finals.</p>
+                            <h4>International Selection</h4>
+                            <p>Ranked #1 in national trials for the World Robotics Summit finals in Japan.</p>
                         </div>
                     </div>
-
+                    <!-- Item 2 -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content-inner">
                             <span class="timeline-year-label">2023</span>
                             <h4>Inter-NIT Champions</h4>
-                            <p>Consistent victory across 12 distinct technical events.</p>
+                            <p>Dominated the Inter-NIT technical meet with gold medals in 12 events.</p>
                         </div>
                     </div>
-
+                    <!-- Item 3 -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content-inner">
                             <span class="timeline-year-label">2022</span>
-                            <h4>First National Win</h4>
-                            <p>Our Combat Bot "Titan" secured gold in first national outing.</p>
+                            <h4>Club Inception</h4>
+                            <p>Officially recognized as the central robotics body of NIT Patna.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- 6. Media Coverage (Optional) -->
+        <section class="media-section">
+            <div class="container">
+                <h2 class="section-heading-center" style="font-size: 1.5rem; color: var(--text-dim);">In The News</h2>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <div class="media-logo"><i class="fas fa-newspaper"></i></div>
+                        <div class="media-content">
+                            <h4>Times of India Feature</h4>
+                            <p>"NIT Patna students build AI-powered drone for flood relief." - Aug 2023</p>
+                        </div>
+                    </div>
+                    <div class="media-item">
+                        <div class="media-logo"><i class="fas fa-tv"></i></div>
+                        <div class="media-content">
+                            <h4>DD Bihar Interview</h4>
+                            <p>Club lead interviewed on the future of robotics in Bihar. - Jan 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->

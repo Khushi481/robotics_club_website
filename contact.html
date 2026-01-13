@@ -58,75 +58,169 @@
                 <!-- Side Drop Left -->
                 <div class="side-drop side-drop-left"></div>
 
-                <!-- Contact Card with Glass Effect -->
-                <div class="contact-card">
-                    <!-- Back Button -->
-                    <a href="index.html" class="back-btn">
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
+                <!-- Main Grid Container -->
+                <div class="contact-grid-wrapper">
 
-                    <!-- Paper Plane Illustration -->
-                    <div class="illustration-section">
-                        <div class="decorative-circle circle-1"></div>
-                        <div class="decorative-circle circle-2"></div>
-                        <div class="decorative-circle circle-3"></div>
-                        <div class="paper-plane">
-                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <g transform="translate(50, 80)">
-                                    <!-- Paper plane body -->
-                                    <path d="M 10 10 L 80 40 L 10 70 L 25 40 Z" fill="#ff9999" stroke="#4a4a4a"
-                                        stroke-width="3" />
-                                    <path d="M 25 40 L 80 40" stroke="#4a4a4a" stroke-width="2" />
-                                    <!-- Motion lines -->
-                                    <line x1="0" y1="25" x2="-10" y2="20" stroke="#4a4a4a" stroke-width="2"
-                                        stroke-linecap="round" />
-                                    <line x1="0" y1="40" x2="-15" y2="40" stroke="#4a4a4a" stroke-width="2"
-                                        stroke-linecap="round" />
-                                    <line x1="0" y1="55" x2="-10" y2="60" stroke="#4a4a4a" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </g>
-                            </svg>
+                    <!-- Left Column: Info & Map -->
+                    <div class="contact-info-column">
+                        <div class="glass-panel info-panel">
+                            <h3>Get in Touch</h3>
+                            <div class="contact-details-list">
+                                <div class="contact-item">
+                                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                                    <div class="contact-text">
+                                        <span>Email Us</span>
+                                        <p>roboticsclub@nitp.ac.in</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">
+                                        <span>Call Us</span>
+                                        <p>+91 98765 43210</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="contact-text">
+                                        <span>Visit Us</span>
+                                        <p>Student Activity Center, NIT Patna, Ashok Rajpath, Patna - 800005</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="icon-box"><i class="fas fa-clock"></i></div>
+                                    <div class="contact-text">
+                                        <span>Meeting Times</span>
+                                        <p>Every Saturday, 5:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Links -->
+                            <div class="social-connect">
+                                <h4>Follow Us</h4>
+                                <div class="social-icons-row">
+                                    <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Section -->
+                        <div class="glass-panel map-panel">
+                            <h3>Find Us</h3>
+                            <div class="map-placeholder">
+                                <!-- Placeholder for Google Map -->
+                                <div class="map-visual">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span>Map Placeholder</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Form Section -->
-                    <div class="form-section">
-                        <h2 class="form-title">Contact us</h2>
+                    <!-- Right Column: Form -->
+                    <div class="contact-form-column">
+                        <div class="glass-panel form-panel">
+                            <h2>Send a Message</h2>
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" placeholder="John Doe" required>
+                                    </div>
+                                </div>
 
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-group">
-                                <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Full name" required>
-                            </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" placeholder="john@example.com" required>
+                                    </div>
+                                </div>
 
-                            <div class="form-group">
-                                <i class="fas fa-envelope"></i>
-                                <input type="email" placeholder="Email address" required>
-                            </div>
+                                <div class="form-group">
+                                    <label>Subject</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-tag"></i>
+                                        <input type="text" placeholder="Brief subject" required>
+                                    </div>
+                                </div>
 
-                            <div class="form-group">
-                                <textarea placeholder="Message..." rows="4" required></textarea>
-                            </div>
+                                <div class="form-group">
+                                    <label>Purpose</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-bullseye"></i>
+                                        <select class="purpose-select" required>
+                                            <option value="" disabled selected>Select a purpose</option>
+                                            <option value="general">General Inquiry</option>
+                                            <option value="join">Join Club</option>
+                                            <option value="event">Event Question</option>
+                                            <option value="collab">Collaboration</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                            <button type="submit" class="submit-btn">
-                                Submit
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </form>
+                                <div class="form-group full-width">
+                                    <label>Message</label>
+                                    <div class="input-wrapper textarea-wrapper">
+                                        <textarea placeholder="Write your message here..." rows="5" required></textarea>
+                                    </div>
+                                </div>
 
-                        <!-- Social Icons -->
-                        <div class="contact-social-icons">
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                                <button type="submit" class="submit-btn full-width">
+                                    Send Message
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
+
+                    <!-- FAQ Section (Moved Here) -->
+                    <div class="faq-section glass-panel">
+                        <h3 class="faq-title">FAQ</h3>
+                        <div class="faq-container">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span>How can I join the Robotics Club?</span>
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Recruitments are usually held at the beginning of the academic session. Keep an
+                                        eye
+                                        on our social media handles for announcements regarding inductions/auditions.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span>Do I need prior experience in robotics?</span>
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Not necessarily! We welcome enthusiasts of all levels. While experience is a
+                                        plus,
+                                        passion and willingness to learn are what we value most. We conduct workshops to
+                                        help you get started.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span>Where does the club meet?</span>
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Our official club room is located in the Student Activity Center (SAC). We
+                                        usually
+                                        meet there for projects, discussions, and workshops.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Side Drop Right -->

@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News | ROBOTICS</title>
+    <title>News | Robotics Club</title>
     <!-- CSS Links -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -50,21 +52,186 @@
         </div>
     </nav>
 
-    <!-- Banner Hero (Half Height) -->
+    <!-- Banner Hero -->
     <header class="about-hero">
         <div class="hero-overlay"></div>
         <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80"
             alt="Robotics News" class="hero-bg-img">
         <div class="container hero-content">
-            <h1 class="hero-title">Latest News</h1>
+            <h1 class="hero-title">Robotics Insights</h1>
+            <p style="color: #ccc; margin-top: 10px; font-size: 1.2rem;">Updates from our club and the world of
+                robotics.</p>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
-        <div class="container" style="min-height: 40vh; display: flex; align-items: center; justify-content: center;">
-            <p style="color: var(--text-dim);">[News Content Pending]</p>
+    <main class="news-container">
+
+        <!-- Filters -->
+        <div class="news-filters">
+            <button class="news-filter-btn active" data-filter="all">All Updates</button>
+            <button class="news-filter-btn" data-filter="club">Club News</button>
+            <button class="news-filter-btn" data-filter="tech">Tech Innovations</button>
+            <button class="news-filter-btn" data-filter="research">Research</button>
+            <button class="news-filter-btn" data-filter="competition">Competitions</button>
         </div>
+
+        <!-- Section 1: Club News -->
+        <h2 class="news-section-title">Club Updates</h2>
+        <div class="club-news-grid">
+            <!-- Club Item 1 -->
+            <div class="club-news-card news-item" data-category="club">
+                <span class="news-date">Dec 15, 2025</span>
+                <h3 class="club-news-title">Annual Winter Workshop Announced</h3>
+                <p class="club-news-desc">The robotics club is excited to announce our upcoming Winter Workshop on
+                    "Advanced PCB Design". Registration is now open for all members. We will be covering KiCad heavily.
+                </p>
+                <a href="#" class="read-more-link">Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <!-- Club Item 2 -->
+            <div class="club-news-card news-item" data-category="club">
+                <span class="news-date">Nov 28, 2025</span>
+                <h3 class="club-news-title">General Body Meeting Summary</h3>
+                <p class="club-news-desc">Key takeaways from our last GBM: New project teams formed for Inter-NIT,
+                    budget approved for drone components, and leadership roles assigned for the upcoming fest.</p>
+                <a href="#" class="read-more-link">Read Minutes <i class="fas fa-file-alt"></i></a>
+            </div>
+        </div>
+
+        <!-- Section 2: Industry News -->
+        <h2 class="news-section-title">Industry Developments</h2>
+        <div class="industry-news-grid">
+
+            <!-- News 1 -->
+            <article class="industry-card news-item" data-category="tech">
+                <div class="industry-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1563206767-5b1d972e8136?auto=format&fit=crop&w=600&q=80"
+                        alt="Atlas Robot">
+                </div>
+                <div class="industry-content">
+                    <div class="news-meta">
+                        <span>Jan 5, 2026</span>
+                        <span class="news-source">Boston Dynamics</span>
+                    </div>
+                    <h3 class="industry-title">New Electric Atlas Revealed</h3>
+                    <p class="industry-summary">Transitioning from hydraulics to electric actuators, the new Atlas robot
+                        demonstrates increased range of motion and silent operation, marking a significant leap in
+                        humanoid robotics for commercial applications.</p>
+                    <a href="https://bostondynamics.com" target="_blank" class="read-more-link">Read More <i
+                            class="fas fa-external-link-alt"></i></a>
+                </div>
+            </article>
+
+            <!-- News 2 -->
+            <article class="industry-card news-item" data-category="tech">
+                <div class="industry-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1535378437327-1e58ffa9e111?auto=format&fit=crop&w=600&q=80"
+                        alt="Tesla Optimus">
+                </div>
+                <div class="industry-content">
+                    <div class="news-meta">
+                        <span>Dec 20, 2025</span>
+                        <span class="news-source">TechCrunch</span>
+                    </div>
+                    <h3 class="industry-title">Gen 3 Humanoid Hand Dexterity</h3>
+                    <p class="industry-summary">The latest update to Tesla's Optimus bot showcases near-human hand
+                        dexterity, capable of handling delicate objects like eggs and threading needles, powered by
+                        end-to-end neural networks.</p>
+                    <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- News 3 -->
+            <article class="industry-card news-item" data-category="research">
+                <div class="industry-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80"
+                        alt="Medical Nanobots">
+                </div>
+                <div class="industry-content">
+                    <div class="news-meta">
+                        <span>Dec 10, 2025</span>
+                        <span class="news-source">Nature Robotics</span>
+                    </div>
+                    <h3 class="industry-title">Breakthrough in Targeted Drug Delivery</h3>
+                    <p class="industry-summary">Researchers at MIT have developed magnetically guided micro-bots that
+                        can navigate through blood vessels to deliver drugs directly to tumor sites, minimizing side
+                        effects of chemotherapy.</p>
+                    <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- News 4 -->
+            <article class="industry-card news-item" data-category="competition">
+                <div class="industry-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=600&q=80"
+                        alt="DARPA Challenge">
+                </div>
+                <div class="industry-content">
+                    <div class="news-meta">
+                        <span>Nov 15, 2025</span>
+                        <span class="news-source">DARPA</span>
+                    </div>
+                    <h3 class="industry-title">SubT Challenge Finals Results</h3>
+                    <p class="industry-summary">The grand finale of the Subterranean Challenge saw teams deploying
+                        swarms of autonomous drones and rovers to map underground environments faster than ever before.
+                        Team Cerberus took the top prize.</p>
+                    <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- News 5 -->
+            <article class="industry-card news-item" data-category="tech">
+                <div class="industry-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80"
+                        alt="Agricultural Bot">
+                </div>
+                <div class="industry-content">
+                    <div class="news-meta">
+                        <span>Jan 2, 2026</span>
+                        <span class="news-source">AgriTech Daily</span>
+                    </div>
+                    <h3 class="industry-title">Autonomous Harvesting Fleets</h3>
+                    <p class="industry-summary">John Deere announces a fully autonomous fleet of harvesting combines
+                        that coordinate via 5G, allowing for 24/7 farming operations with centimeter-level precision
+                        GPS.</p>
+                    <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- News 6 -->
+            <article class="industry-card news-item" data-category="research">
+                <div class="industry-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=600&q=80"
+                        alt="Soft Robotics">
+                </div>
+                <div class="industry-content">
+                    <div class="news-meta">
+                        <span>Dec 05, 2025</span>
+                        <span class="news-source">Science Mag</span>
+                    </div>
+                    <h3 class="industry-title">Self-Healing Soft Robots</h3>
+                    <p class="industry-summary">A new polymer material allows soft robotic grippers to heal themselves
+                        after being cut or punctured, extending the lifespan of delicate manipulation robots
+                        significantly.</p>
+                    <a href="#" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="newsletter-section">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Stay Updated</h2>
+                <p class="newsletter-desc">Subscribe to our monthly newsletter for the latest club news, tutorials, and
+                    industry insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -110,10 +277,9 @@
         </div>
     </footer>
 
-    <!-- GSAP & Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script src="js/news.js"></script>
 </body>
 
 </html>

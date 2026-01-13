@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Robotics Club</title>
+    <title>Projects Showcase | Robotics Club</title>
     <meta name="description"
         content="Explore our latest robotics projects, from autonomous drones to AI-powered rovers.">
     <!-- CSS Links -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/projects.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -53,103 +54,441 @@
         </div>
     </nav>
 
-    <!-- Banner Hero (Half Height) -->
+    <!-- Banner Hero -->
     <header class="about-hero">
         <div class="hero-overlay"></div>
         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80"
             alt="Robotics Projects" class="hero-bg-img">
         <div class="container hero-content">
-            <h1 class="hero-title">Our Projects</h1>
+            <h1 class="hero-title">Project Showcase</h1>
+            <p style="color: #ccc; margin-top: 10px; font-size: 1.2rem;">Building the future, one bot at a time.</p>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="projects-section" style="position: relative; overflow: hidden;">
-        <!-- Decorative Pills -->
+    <main class="projects-section">
+
+        <!-- Background Elements -->
         <div class="glow-pill glow-pill--cyan" style="top: 15%; left: 5%; opacity: 0.15;"></div>
         <div class="glow-pill glow-pill--magenta"
             style="top: 45%; right: -10px; opacity: 0.1; transform: rotate(-20deg);"></div>
-        <div class="glow-pill glow-pill--small" style="bottom: 15%; left: 15%; opacity: 0.12;"></div>
-        <div class="glow-pill" style="top: 70%; right: 5%; opacity: 0.1;"></div>
 
-        <div class="container">
-            <!-- Filter Buttons -->
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="autonomous">Autonomous</button>
-                <button class="filter-btn" data-filter="drones">Drones</button>
-                <button class="filter-btn" data-filter="ai">AI & ML</button>
-                <button class="filter-btn" data-filter="competitions">Competitions</button>
+        <div class="projects-container">
+
+            <!-- Filters -->
+            <div class="filter-section">
+                <div class="filter-group">
+                    <label class="filter-label"><i class="fas fa-filter"></i> Project Type:</label>
+                    <select id="typeFilter" class="filter-select">
+                        <option value="all">All Projects</option>
+                        <option value="drone">Drones & UAVs</option>
+                        <option value="rover">Robotic Arms & Rovers</option>
+                        <option value="ai">AI & Machine Learning</option>
+                        <option value="iot">IoT & Automation</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label"><i class="fas fa-calendar-alt"></i> Year:</label>
+                    <select id="yearFilter" class="filter-select">
+                        <option value="all">All Years</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
             </div>
 
-            <!-- Projects Grid -->
+            <!-- Grid -->
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <article class="project-card" data-category="autonomous">
-                    <div class="card-image">
-                        <img src="images/projects/project1.svg" alt="Autonomous Rover">
+
+                <!-- Project 1: Self Balancing Bot -->
+                <article class="project-showcase-card" data-type="rover" data-year="2024"
+                    data-tech="Arduino, Gyroscope, PID Control" data-team="Robotics Club"
+                    data-full-desc="The self-balancing robot is similar to an upside-down pendulum. Unlike a normal pendulum which keeps on oscillating, this robot continuously corrects its position to stay upright using data from a gyroscope and accelerometer.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project1.svg" alt="Self Balancing Bot"
+                            onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80'">
                     </div>
-                    <div class="card-content">
-                        <h3>Autonomous Rover</h3>
-                        <p class="tag">Autonomous</p>
-                        <p>A self-navigating rover designed for rough terrain exploration using LIDAR technology.</p>
-                        <a href="#" class="btn-text">View Details &rarr;</a>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2024</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Robotics</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Self Balancing Bot</h3>
+                        <p class="project-desc">A PID-controlled robot that balances itself like an inverted pendulum.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">PID</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 2 -->
-                <article class="project-card" data-category="drones">
-                    <div class="card-image">
-                        <img src="images/projects/project2.svg" alt="Quadcopter X1">
+                <!-- Project 2: Mark 1.6 -->
+                <article class="project-showcase-card" data-type="rover" data-year="2024"
+                    data-tech="Bluetooth, 4WD, Robotics Arm" data-team="Robotics Club"
+                    data-full-desc="Mark 1.6 is basically a fully wireless Bluetooth controlled robotic arm which is mounted on a 4WD chassis. In this, the arm is capable of picking and placing objects while the chassis provides mobility across various terrains.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project2.svg" alt="Mark 1.6"
+                            onerror="this.src='https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?auto=format&fit=crop&w=600&q=80'">
                     </div>
-                    <div class="card-content">
-                        <h3>Quadcopter X1</h3>
-                        <p class="tag">Drones</p>
-                        <p>High-speed racing drone with FPV capabilities and custom flight controller.</p>
-                        <a href="#" class="btn-text">View Details &rarr;</a>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2024</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Rover</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Mark 1.6</h3>
+                        <p class="project-desc">Wireless Bluetooth controlled robotic arm mounted on a 4WD chassis.</p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Bluetooth</span>
+                            <span class="tech-tag">Robotic Arm</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 3 -->
-                <article class="project-card" data-category="ai">
-                    <div class="card-image">
-                        <img src="images/projects/project3.svg" alt="AI Chess Bot">
+                <!-- Project 3: Line Follower Bot -->
+                <article class="project-showcase-card" data-type="autonomous" data-year="2023"
+                    data-tech="IR Sensors, Arduino, Motor Driver" data-team="Robotics Club"
+                    data-full-desc="The line follower robot is a mobile machine that can detect and follow the line drawn on the floor. Generally, the path is predefined and can be either visible like a black line on a white surface with a high contrasted color.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project3.svg" alt="Line Follower Bot"
+                            onerror="this.src='https://images.unsplash.com/photo-1593106578502-27fa8479d060?auto=format&fit=crop&w=600&q=80'">
                     </div>
-                    <div class="card-content">
-                        <h3>AI Chess Bot</h3>
-                        <p class="tag">AI & ML</p>
-                        <p>A physical robotic arm that plays chess against humans using computer vision.</p>
-                        <a href="#" class="btn-text">View Details &rarr;</a>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2023</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Autonomous</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Line Follower Bot</h3>
+                        <p class="project-desc">Mobile machine that detects and follows a predefined path on the floor.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">IR Sensors</span>
+                            <span class="tech-tag">Arduino</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 4 -->
-                <article class="project-card" data-category="competitions">
-                    <div class="card-image">
-                        <img src="images/projects/project4.svg" alt="BattleBot Destroyer">
+                <!-- Project 4: PlutoX -->
+                <article class="project-showcase-card" data-type="drone" data-year="2024"
+                    data-tech="Nano Drone, Open Source, C++" data-team="Drona Aviation Collaboration"
+                    data-full-desc="PlutoX is an open-source programmable nano drone by an IIT Bombay based Indian company, Drona Aviation. It allows students to experiment with flight dynamics and custom coding for aerial stability.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project4.svg" alt="PlutoX"
+                            onerror="this.src='https://images.unsplash.com/photo-1506947411487-a567a4419f96?auto=format&fit=crop&w=600&q=80'">
                     </div>
-                    <div class="card-content">
-                        <h3>BattleBot Destroyer</h3>
-                        <p class="tag">Competitions</p>
-                        <p>Our championship-winning combat robot with a vertical spinner weapon.</p>
-                        <a href="#" class="btn-text">View Details &rarr;</a>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2024</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Drone</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">PlutoX</h3>
+                        <p class="project-desc">Open-source programmable nano drone for flight experimentation.</p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Drone</span>
+                            <span class="tech-tag">Programmable</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </article>
-                <!-- Project 5 -->
-                <article class="project-card" data-category="autonomous">
-                    <div class="card-image">
-                        <img src="images/projects/project5.svg" alt="Line Follower">
+
+                <!-- Project 5: 3D Printing -->
+                <article class="project-showcase-card" data-type="manufacturing" data-year="2023"
+                    data-tech="CAD, PLA/ABS, Slicing" data-team="Design Team"
+                    data-full-desc="3D printing is a process of making three dimensional solid objects from a digital file. The creation of a 3D printed object is achieved using additive processes, enabling rapid prototyping of robot parts.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project5.svg" alt="3D Printing"
+                            onerror="this.src='https://images.unsplash.com/photo-1629898263595-65a0b730590c?auto=format&fit=crop&w=600&q=80'">
                     </div>
-                    <div class="card-content">
-                        <h3>Line Follower v2</h3>
-                        <p class="tag">Autonomous</p>
-                        <p>Advanced PID-controlled line follower for high-speed track navigation.</p>
-                        <a href="#" class="btn-text">View Details &rarr;</a>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2023</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Design</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">3D Printing</h3>
+                        <p class="project-desc">Creating 3D solid objects from digital files for robot prototyping.</p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">CAD</span>
+                            <span class="tech-tag">Prototyping</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6: Automated Bot -->
+                <article class="project-showcase-card" data-type="autonomous" data-year="2024"
+                    data-tech="Ultrasonic Sensors, Microcontroller" data-team="Robotics Club"
+                    data-full-desc="An automated bot that moves in the vicinity of a wall maintaining a constant distance from it, and keeping a count of the number of turns or obstacles encountered using precision sensors.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project1.svg" alt="Automated Bot"
+                            onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2024</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Autonomous</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Automated Bot</h3>
+                        <p class="project-desc">Wall-following robot that maintains constant distance and counts turns.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Wall Follower</span>
+                            <span class="tech-tag">Sensors</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 7: Radar Navigation -->
+                <article class="project-showcase-card" data-type="ai" data-year="2023"
+                    data-tech="Radar, ARPA, Navigation Systems" data-team="Research Team"
+                    data-full-desc="The Radar Navigation system is used in identifying, tracking (with integrated ARPA), and positioning of vessels, including one's own relative to threats or obstacles. Integrating this into autonomous vehicles enhances safety.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project3.svg" alt="Radar Navigation"
+                            onerror="this.src='https://images.unsplash.com/photo-1580983218765-f663bec07b37?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2023</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Systems</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Radar Navigation</h3>
+                        <p class="project-desc">System for identifying, tracking, and positioning vessels using ARPA.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Radar</span>
+                            <span class="tech-tag">Navigation</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 8: Hexapod -->
+                <article class="project-showcase-card" data-type="rover" data-year="2025"
+                    data-tech="Inverse Kinematics, Servo Motors" data-team="Advanced Robotics"
+                    data-full-desc="Hexapods are used for moving and precision positioning, aligning and displacing loads in all six degrees of freedom. This 6-legged robot demonstrates complex gait algorithms and terrain adaptation.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project1.svg" alt="Hexapod"
+                            onerror="this.src='https://images.unsplash.com/photo-1616782352136-2244a04d16d1?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2025</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Robotics</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Hexapod</h3>
+                        <p class="project-desc">6-legged robot for precision positioning and six degrees of freedom
+                            movement.</p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Inverse Kinematics</span>
+                            <span class="tech-tag">Walker</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 9: Drone (Air Quality) -->
+                <article class="project-showcase-card" data-type="drone" data-year="2024"
+                    data-tech="Gas Sensors, IoT, Flight Controller" data-team="EcoTech Team"
+                    data-full-desc="Air quality monitoring drone. It is a manually controlled drone that acquires data about the concentration of various gases in the atmosphere, helping in environmental monitoring of inaccessible areas.">
+
+                    <div class="card-image-wrapper">
+                        <img src="images/projects/project2.svg" alt="Air Quality Drone"
+                            onerror="this.src='https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+
+                    <div class="card-body">
+                        <div class="card-meta-top">
+                            <span class="project-year">2024</span>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Drone</span>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Air Quality Drone</h3>
+                        <p class="project-desc">Drone equipped with sensors to monitor atmospheric gas concentrations.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Environmental</span>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="team-avatars">
+                                <i class="fas fa-users" style="color: #888;"></i> <span
+                                    style="font-size: 0.8rem; color: #666;">Team</span>
+                            </div>
+                            <a href="#" class="view-details-btn view-project-btn">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </article>
             </div>
+
+
+        </div>
         </div>
     </main>
+
+    <!-- Project Details Modal -->
+    <div class="project-modal-overlay" id="projectModal">
+        <div class="project-modal">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Project Detail">
+                </div>
+                <div class="modal-details">
+                    <h2 class="modal-title" id="modalTitle">Project Title</h2>
+                    <div class="modal-meta">
+                        <span><i class="fas fa-calendar"></i> <span id="modalYear">2024</span></span>
+                        <span><i class="fas fa-users"></i> <span id="modalTeam">Team Name</span></span>
+                    </div>
+
+                    <p class="modal-desc" id="modalDesc">Detailed description goes here...</p>
+
+                    <div class="modal-info-grid">
+                        <div class="info-item">
+                            <h4>Technologies</h4>
+                            <p id="modalTech">Tech 1, Tech 2</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Share</h4>
+                            <div class="social-links">
+                                <a href="#" style="color: #fff; margin-right: 10px;"><i class="fab fa-github"></i></a>
+                                <a href="#" style="color: #fff; margin-right: 10px;"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -194,11 +533,9 @@
         </div>
     </footer>
 
-    <!-- GSAP & Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/filters.js"></script>
+    <script src="js/projects.js"></script>
 </body>
 
 </html>
