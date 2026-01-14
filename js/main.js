@@ -82,11 +82,37 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = contactForm.querySelector('.submit-btn');
             const originalText = btn.innerHTML;
 
-            // Loading State
+            // Loading State (visual)
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             btn.style.opacity = '0.8';
 
-            // Mock Delay
+            /*
+             * API-Ready: Replace this mock POST with a real API call.
+             * Example (uncomment and adapt the URL/payload as needed):
+             *
+             * const payload = {
+             *   name: contactForm.querySelector('[name="name"]').value,
+             *   email: contactForm.querySelector('[name="email"]').value,
+             *   subject: contactForm.querySelector('[name="subject"]').value,
+             *   purpose: contactForm.querySelector('[name="purpose"]').value,
+             *   message: contactForm.querySelector('[name="message"]').value
+             * };
+             *
+             * fetch('/api/contact', {
+             *   method: 'POST',
+             *   headers: { 'Content-Type': 'application/json' },
+             *   body: JSON.stringify(payload)
+             * })
+             * .then(res => res.json())
+             * .then(data => {
+             *   // success handling: show confirmation panel
+             * })
+             * .catch(err => {
+             *   // error handling: show message and restore button
+             * });
+             */
+
+            // Mock Delay (current behavior kept for demo/testing)
             setTimeout(() => {
                 // Success State
                 const formPanel = document.querySelector('.form-panel');

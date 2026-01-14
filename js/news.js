@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    /*
+     * API-Ready: If news items are to be fetched from a backend/API,
+     * this is a good place to perform the initial GET request and
+     * render the returned items into the DOM instead of relying on
+     * hard-coded HTML. Example:
+     *
+     * fetch('/api/news')
+     *   .then(r => r.json())
+     *   .then(items => renderNewsItems(items));
+     *
+     * function renderNewsItems(items) { ... }
+     */
+
     const filterBtns = document.querySelectorAll('.news-filter-btn');
     const newsCards = document.querySelectorAll('.news-item'); // Assuming common class for filtering
 

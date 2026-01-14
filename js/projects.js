@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Filtering Logic ---
+    /*
+     * API-Ready: Projects can be loaded dynamically from an API endpoint.
+     * To support that flow, fetch a JSON list of projects here and
+     * populate the `.projects-grid` container with generated card nodes.
+     * Example:
+     *
+     * fetch('/api/projects')
+     *   .then(r => r.json())
+     *   .then(projects => {
+     *     // clear existing grid and create DOM nodes for each project
+     *   });
+     */
     const typeFilter = document.getElementById('typeFilter');
     const yearFilter = document.getElementById('yearFilter');
     const projectCards = document.querySelectorAll('.project-showcase-card');

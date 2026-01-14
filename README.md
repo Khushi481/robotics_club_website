@@ -1,25 +1,49 @@
 # Robotics Club Website
 
-## Technology Choices
-For the construction of this website, we opted for a **Vanilla HTML5, CSS3, and JavaScript** stack.
+Maintainer
+- Name: Khushi
+- Contact:khushi22072207@gmail.com / 9279554234
+Overview
+- Static, responsive website for the Robotics Club built with Vanilla HTML, CSS and JavaScript. The design uses a dark/neon theme and is optimized for fast loading and easy deployment.
 
-### Why this stack?
-1.  **Compliance with Requirements**: The required folder structure (`/css`, `/js`, `/images`) maps 1:1 with a traditional static site setup, making frameworks like React or Vue overkill or requiring complex build steps (like Webpack/Vite) to output this exact structure.
-2.  **No Build Step / No Backend**: The constraints specified "No Backend Required" and implied a simple deployment. Vanilla static files can be deployed anywhere (GitHub Pages, Netlify, Vercel, or a simple Apache/Nginx server) without compiling.
-3.  **Performance & Lightweight**: Without the overhead of a Virtual DOM or large bundles, the site loads instantly.
-4.  **Control**: Using vanilla CSS allows for precise control over the design to match the "Premium" and "Wowed" aesthetic requirements without fighting framework overrides.
+Technology choice and reason
+- HTML5 / CSS3 / JavaScript (Vanilla): Simple, dependency-free delivery suitable for static hosting (GitHub Pages, Netlify, etc.).
+- GSAP (CDN): used for lightweight, high-performance animations (hero and small transitions).
+- Font resources: Google Fonts (Exo 2, Orbitron, Montserrat) for aesthetic headings and body typography.
+- Font Awesome (CDN): iconography used across the UI.
 
-## Project Structure
-- `index.html`, `projects.html`, etc.: Main entry points for each page.
-- `css/`:
-  - `main.css`: Global variables, reset, typography, and shared layout (Navbar/Footer).
-  - `components.css`: Specific styles for isolated UI elements (Cards, Buttons, Grids).
-  - `responsive.css`: Media queries to override styles for mobile/tablet devices.
-- `js/`:
-  - `main.js`: Global interactivity (e.g., Mobile Menu toggle).
-  - `filters.js`: Specific logic for the Projects page filtering system.
-  - `modals.js`: (Future) Modal interaction logic.
-- `images/`: Organized assets.
+How this supports future scalability
+- Modular CSS: `main.css`, `components.css`, and `responsive.css` separate concerns so new components or pages can be added with minimal conflicts.
+- CSS variables (`:root`) for colors, fonts, and layout primitives (e.g., `--nav-height`) make it straightforward to update the theme or adjust spacing globally.
+- Semantic HTML and small JS modules (`js/main.js`, `js/news.js`, `js/projects.js`) keep behavior isolated and easy to migrate to a build system later.
+- If the project grows, the codebase is ready to be migrated to a component-based workflow or static site generator (11ty / Hugo / Next) with minimal rework.
 
-## Deployment
-Simply upload the entire `robotics-club-website` folder to any static hosting provider. Open `index.html` to view locally.
+External resources & images used
+- Google Fonts: Exo 2, Orbitron, Montserrat (loaded via `fonts.googleapis.com`)
+- Font Awesome: CDN at `cdnjs.cloudflare.com` for icons
+- GSAP + ScrollTrigger: `cdnjs.cloudflare.com` (used for hero and UI animations)
+- Unsplash images: several pages use Unsplash CDN images as visual placeholders (e.g., hero / project thumbnails). Example sources visible in `*.html` files.
+- Local assets: `images/` (background, team, projects, hero images, logo)
+
+Setup & Local Testing
+1. Clone or download the repository and open the folder `robotics_club_website`.
+2. Quick local view: open `index.html` directly in a browser for basic testing (some features may require a server due to CORS/browser restrictions).
+3. Recommended: run a local static server (Python):
+
+```bash
+cd robotics_club_website
+python -m http.server 8000
+# then open http://localhost:8000 in your browser
+```
+
+4. Alternatively use VS Code Live Server extension for instant reloads.
+5. When testing after style/script edits, do a hard refresh (Ctrl+Shift+R) or open the site in an incognito tab — some files include cache-busting query strings (e.g., `css/responsive.css?v=4`).
+
+Notes & Next Steps
+- To embed a live Google Map replace the static placeholder in `contact.html` with the Google Maps embed snippet (requires API key for dynamic features).
+- To bundle dependencies for production (optional) add a build step with a bundler (Vite / Webpack) and move CDN libs to local copies or npm packages.
+
+License / Attribution
+- Design and code authored by the Robotics Club contributors. External images and fonts retain their original licenses (Unsplash and Google Fonts);
+  please review their usage terms if redistributing assets.
+
