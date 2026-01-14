@@ -58,6 +58,8 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     margin-bottom: 80px;
+    align-items: start;
+    grid-auto-rows: 1fr;
 }
 
 .club-news-card {
@@ -68,6 +70,8 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .club-news-card::before {
