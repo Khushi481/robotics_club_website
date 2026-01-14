@@ -22,6 +22,12 @@
     --font-body: 'Exo 2', sans-serif;
 
     --transition-speed: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /*
+     * Default navbar height for desktop. This variable allows responsive
+     * styles to position elements (like mobile sliding menus and hero
+     * sections) relative to the navbar without hardcoding values in many
+     * places.
+     */
     --nav-height: 100px;
 }
 
@@ -441,6 +447,11 @@ img {
 }
 
 .slide-content h1 {
+    /* Large hero heading: use clamp() so the text scales between
+     * a readable minimum and maximum size across viewports. This
+     * prevents overflow and avoids manual media queries for most
+     * common screen widths.
+     */
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 1.1;
     color: #fff;

@@ -53,6 +53,13 @@
 }
 
 /* --- Section: Club News (Highlights) --- */
+/*
+ * Keep club news cards visually aligned and prevent re-ordering when
+ * card content length differs: `align-items: start` + `grid-auto-rows: 1fr`
+ * ensure every grid cell matches height. Each `.club-news-card` is a
+ * column flex container so footer/read-more links stay anchored at the
+ * bottom of the card and content flows predictably.
+ */
 .club-news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -62,6 +69,9 @@
     grid-auto-rows: 1fr;
 }
 
+/* Card structure: use column flex layout so interior spacing is predictable
+ * and CTAs (buttons/links) remain at the bottom when cards stretch.
+ */
 .club-news-card {
     background: rgba(20, 10, 30, 0.6);
     border: 1px solid var(--border-glass);
