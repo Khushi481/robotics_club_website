@@ -22,6 +22,7 @@
     --font-body: 'Exo 2', sans-serif;
 
     --transition-speed: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --nav-height: 100px;
 }
 
 /* Reset & Base */
@@ -150,13 +151,13 @@ img {
     padding: 10px 0;
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    /* Keep height constant to prevent glitchy reflow */
-}
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var(--nav-height);
+        /* Keep height constant to prevent glitchy reflow */
+    }
 
 .navbar.scrolled .nav-container {
     height: 80px;
@@ -440,7 +441,7 @@ img {
 }
 
 .slide-content h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 1.1;
     color: #fff;
     text-transform: capitalize;
