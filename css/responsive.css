@@ -554,3 +554,115 @@
         width: 20px !important;
     }
 }
+
+/* Events Page Small Screen Fixes (under 600px) */
+@media (max-width: 600px) {
+
+    /* Section header - stack vertically */
+    .section-header-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+
+    /* Calendar preview button - smaller */
+    .calendar-preview-trigger {
+        padding: 8px 15px;
+        gap: 10px;
+        font-size: 0.85rem;
+    }
+
+    .calendar-img-small {
+        width: 30px;
+        height: 30px;
+    }
+
+    .calendar-preview-trigger span {
+        font-size: 0.85rem;
+    }
+
+    /* Section heading - smaller */
+    .section-heading {
+        font-size: 1.5rem !important;
+        gap: 10px;
+        padding-left: 15px;
+    }
+
+    .section-heading i {
+        font-size: 1.3rem !important;
+    }
+
+    /* Events controls - stack vertically */
+    .events-controls {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .filter-group {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+
+    .sort-group {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .sort-select {
+        width: 100%;
+    }
+
+    /* Event cards - ensure no overflow */
+    .events-grid,
+    .ongoing-grid,
+    .past-gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* Reduce event card padding */
+    .event-info {
+        padding: 20px;
+    }
+
+    .event-info h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Ongoing project cards */
+    .project-info {
+        padding: 20px;
+    }
+
+    /* Container padding */
+    .events-main .container {
+        padding: 0 10px;
+    }
+}
+
+/* Extra small screens (under 400px) */
+@media (max-width: 400px) {
+    .section-heading {
+        font-size: 1.3rem !important;
+    }
+
+    .calendar-preview-trigger {
+        padding: 6px 12px;
+    }
+
+    .filter-btn {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+
+    .events-controls {
+        padding: 12px 8px;
+    }
+}
