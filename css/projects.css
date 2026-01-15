@@ -8,10 +8,12 @@
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
     margin-top: 40px;
+    min-height: 500px;
+    align-items: stretch;
 }
 
 /* --- Filter Section --- */
@@ -60,43 +62,37 @@
     box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
 }
 
-/* --- Project Card (Based on "3 Reasons To Choose Us" style) --- */
-/* We adapt the "clean white card" concept to the dark theme by using a
-   high-contrast glass or solid light-grey approach if strictly following "picture",
-   but usually users want it to fit the theme. I will make it LOOK like the structure
-   of those cards: Rounded, Icon/Image top, Clean text, generic "Read More" */
 
-/* --- Project Card (Based on "3 Reasons To Choose Us" style) --- */
+/* --- Project Card (Horizontal Accordion) --- */
 .project-showcase-card {
     background: #000000;
-    /* Black background as requested */
     color: #fff;
-    /* White text for dark card */
     border-radius: 20px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    /* Slightly stronger shadow */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
-    height: 100%;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Subtle border for definition */
+    flex: 1;
+    min-width: 80px;
+    cursor: pointer;
 }
 
 .project-showcase-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 243, 255, 0.1);
-    /* Neon glow hint on hover */
+    flex: 2;
+    box-shadow: 0 20px 40px rgba(0, 243, 255, 0.2);
     border-color: var(--secondary-neon);
 }
 
 .card-image-wrapper {
-    height: 200px;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     position: relative;
     background: #000;
+    flex-shrink: 0;
 }
 
 .card-image-wrapper img {
@@ -115,6 +111,11 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
 }
 
 .card-meta-top {
@@ -122,6 +123,8 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .project-year {
@@ -129,7 +132,6 @@
     font-weight: 700;
     color: #000;
     background: var(--secondary-neon);
-    /* Neon accent for contrast */
     padding: 4px 10px;
     border-radius: 20px;
 }
@@ -139,17 +141,35 @@
     font-weight: 700;
     margin-bottom: 15px;
     color: var(--secondary-neon);
-    /* Neon Title */
     font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Hidden content that appears on hover */
+.project-desc,
+.tech-stack,
+.card-footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.project-showcase-card:hover .project-desc,
+.project-showcase-card:hover .tech-stack,
+.project-showcase-card:hover .card-footer {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+    transition-delay: 0.2s;
 }
 
 .project-desc {
     font-size: 0.95rem;
     color: #ccc;
-    /* Light gray for readability */
     line-height: 1.6;
     margin-bottom: 20px;
-    flex-grow: 1;
 }
 
 .tech-stack {
@@ -163,7 +183,6 @@
     font-size: 0.75rem;
     padding: 4px 8px;
     background: rgba(255, 255, 255, 0.1);
-    /* Glassy tag */
     color: var(--primary-neon);
     border: 1px solid var(--primary-neon);
     border-radius: 4px;
@@ -335,9 +354,37 @@
         padding: 40px 15px;
     }
 
+    /* Switch to vertical layout on tablet */
     .projects-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        min-height: auto;
         gap: 25px;
+    }
+
+    .project-showcase-card {
+        flex: none !important;
+        min-width: auto;
+        height: auto;
+    }
+
+    .card-image-wrapper {
+        height: 200px;
+        width: 100%;
+    }
+
+    .card-body {
+        position: relative;
+        background: transparent;
+        padding: 25px;
+    }
+
+    /* Show all content on mobile */
+    .project-desc,
+    .tech-stack,
+    .card-footer {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        max-height: none !important;
     }
 
     .filter-section {
