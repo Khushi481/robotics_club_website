@@ -688,6 +688,8 @@
 
     .milestone-banner {
         width: 100%;
+        box-sizing: border-box;
+        /* Ensure padding doesn't overflow width */
         padding: 45px 20px 25px 20px;
         /* More top padding for icon */
         text-align: center;

@@ -447,6 +447,12 @@
         grid-template-columns: 1fr;
     }
 
+    .history-highlights {
+        grid-template-columns: 1fr;
+        padding: 25px;
+        gap: 30px;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
