@@ -300,3 +300,139 @@
     /* As requested, non-functional */
     opacity: 0.8;
 }
+
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    .news-container {
+        padding: 40px 15px;
+    }
+
+    .club-news-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .industry-news-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .news-section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Small Screen Fixes (under 600px) */
+@media (max-width: 600px) {
+    .news-container {
+        padding: 30px 10px;
+    }
+
+    /* Filter buttons */
+    .news-filters {
+        padding: 12px 10px;
+        gap: 10px;
+        border-radius: 15px;
+    }
+
+    .news-filter-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    /* Section titles */
+    .news-section-title {
+        font-size: 1.5rem;
+        padding-left: 15px;
+        border-left-width: 4px;
+    }
+
+    /* Club news cards */
+    .club-news-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .club-news-card {
+        padding: 20px;
+    }
+
+    .club-news-title {
+        font-size: 1.2rem;
+    }
+
+    .club-news-desc {
+        font-size: 0.9rem;
+    }
+
+    /* Industry news cards */
+    .industry-news-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .industry-content {
+        padding: 20px;
+    }
+
+    .industry-title {
+        font-size: 1.2rem;
+    }
+
+    .industry-summary {
+        font-size: 0.85rem;
+    }
+
+    /* Newsletter section */
+    .newsletter-section {
+        padding: 40px 20px;
+        border-radius: 15px;
+    }
+
+    .newsletter-title {
+        font-size: 1.5rem;
+    }
+
+    .newsletter-desc {
+        font-size: 0.9rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-input,
+    .newsletter-btn {
+        width: 100%;
+        padding: 12px 18px;
+    }
+}
+
+/* Extra small screens (under 400px) */
+@media (max-width: 400px) {
+    .news-container {
+        padding: 25px 8px;
+    }
+
+    .news-section-title {
+        font-size: 1.3rem;
+        padding-left: 12px;
+    }
+
+    .news-filter-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .club-news-card,
+    .industry-content {
+        padding: 15px;
+    }
+
+    .newsletter-section {
+        padding: 30px 15px;
+    }
+}

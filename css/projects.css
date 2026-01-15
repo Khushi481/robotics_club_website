@@ -377,6 +377,104 @@
     }
 }
 
+/* Small Screen Fixes (under 600px) */
+@media (max-width: 600px) {
+    .projects-container {
+        padding: 30px 10px;
+    }
+
+    .filter-section {
+        padding: 12px 10px;
+    }
+
+    .filter-label {
+        font-size: 0.85rem;
+    }
+
+    .filter-select {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Modal adjustments for small screens */
+    .project-modal {
+        width: 95%;
+        max-width: 95%;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-image {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .modal-details {
+        padding: 20px 15px;
+    }
+
+    .modal-title {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .modal-meta {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+
+    .modal-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .modal-info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .info-item h4 {
+        font-size: 0.85rem;
+    }
+
+    .info-item p {
+        font-size: 0.85rem;
+    }
+
+    /* Card adjustments */
+    .card-body {
+        padding: 20px;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+
+    .project-desc {
+        font-size: 0.9rem;
+    }
+
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 3px 7px;
+    }
+}
+
 @media (max-width: 480px) {
     .projects-container {
         padding: 30px 10px;
