@@ -158,7 +158,7 @@ class CinematicIntro {
                     y: targetY - startPos.y,
                     scale: 1.0, // Match the final text scale closer
                     fontWeight: 900,
-                    duration: 2.0,
+                    duration: 1.2, // Faster glide
                     ease: 'power3.inOut', // Highest quality smooth motion
                     color: '#00f3ff',
                     textShadow: '0 0 30px #00f3ff',
@@ -177,7 +177,7 @@ class CinematicIntro {
         }, '-=0.3');
 
         // Phase 3: Transition to Branding Reveal
-        tl.add(() => this.showBranding(), '+=0.2');
+        tl.add(() => this.showBranding(), '-=0.2');
     }
 
     showBranding() {

@@ -665,39 +665,54 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+
+    /* Milestone Section - Mobile Refinement */
+    .milestone-container {
+        padding: 0 15px;
+        /* Ensure container has safe padding */
+        gap: 40px;
+    }
+
     .milestone-card {
         flex-direction: column;
         align-items: center;
-        /* Center align everything */
-        margin-bottom: 40px;
-        /* More space between cards */
+        /* Center align contents */
+        margin-bottom: 20px;
+        width: 100%;
+        /* Force full width */
     }
 
     .milestone-icon-wrapper {
         margin: 0 auto -30px auto;
-        /* Center and overlap downwards */
+        /* Center horizontally, overlap vertically */
         background: #0a0a0a;
-        /* Match section background */
         border-radius: 50%;
         padding: 10px;
         box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
-        /* Shadow on top */
         z-index: 10;
         border: 1px solid var(--card-border);
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     }
 
     .milestone-banner {
         width: 100%;
+        /* Fill the container */
         box-sizing: border-box;
-        /* Ensure padding doesn't overflow width */
-        padding: 45px 20px 25px 20px;
-        /* More top padding for icon */
+        /* Vital for padding */
+        padding: 50px 20px 30px 20px;
+        /* Top padding clears the icon */
         text-align: center;
         clip-path: none;
-        /* Remove complex shape */
+        /* Cancel desktop clip-path */
         border-radius: 15px;
         background: linear-gradient(180deg, #1a1a1a, #0a0a0a);
-        /* Subtle gradient */
+        margin: 0;
+        /* Reset margins */
     }
 
     /* Adjust gradient borders for cards */
@@ -711,19 +726,25 @@
         border: 1px solid rgba(0, 243, 255, 0.3);
     }
 
+    /* Reposition badge to be purely decorative inside/near the card */
     .milestone-number {
+        position: absolute;
         right: 15px;
         top: 15px;
         transform: none;
         /* No rotation */
         border-radius: 50%;
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 11;
     }
 
     .milestone-number span {
         transform: none;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }
