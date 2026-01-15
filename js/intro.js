@@ -120,20 +120,35 @@ class CinematicIntro {
 
         // Phase 2: Glide N, I, T, P to center - LIQUID SMOOTH
         tl.add(() => {
-            const screenCenterX = window.innerWidth / 2;
-            const screenCenterY = window.innerHeight / 2;
-            const letterSpacing = 65; // Elegant spacing
-            const totalWidth = (letterElements.length - 1) * letterSpacing;
-            const targetStartX = screenCenterX - (totalWidth / 2);
+            // NEW: Target the ACTUAL position where "NITP" will appear
+            const nitpText = document.getElementById('nitp-text');
+            const nitpRect = nitpText.getBoundingClientRect();
+
+            let targetBaseY, targetBaseX, segmentStep;
+
+            // Check if measurement is valid (element must have layout)
+            if (nitpRect.width > 0 && nitpRect.height > 0) {
+                targetBaseY = nitpRect.top + nitpRect.height / 2;
+                // "NITP" -> 4 chars. We calculate the center of each character slot roughly
+                // This assumes standard kerning, but it's much better than screen center
+                segmentStep = nitpRect.width / 4;
+                targetBaseX = nitpRect.left;
+            } else {
+                // Fallback if something is wrong with layout measurement
+                targetBaseY = window.innerHeight / 2 + 60; // Approx offset
+                segmentStep = 70;
+                targetBaseX = (window.innerWidth / 2) - (segmentStep * 2);
+            }
 
             const glideTl = gsap.timeline();
 
             letterElements.forEach((el, index) => {
                 if (!el || !initialPositions[index]) return;
 
-                // Absolute target for this letter
-                const targetX = targetStartX + (index * letterSpacing);
-                const targetY = screenCenterY;
+                // Calculate precise target center for this letter
+                // Center of the segment: start + (index * width) + (width/2)
+                const targetX = targetBaseX + (index * segmentStep) + (segmentStep / 2);
+                const targetY = targetBaseY;
 
                 // Sync current position to fixed point to avoid layout shift glitches
                 const startPos = initialPositions[index];
@@ -141,7 +156,7 @@ class CinematicIntro {
                 glideTl.to(el, {
                     x: targetX - startPos.x,
                     y: targetY - startPos.y,
-                    scale: 1.2,
+                    scale: 1.0, // Match the final text scale closer
                     fontWeight: 900,
                     duration: 2.0,
                     ease: 'power3.inOut', // Highest quality smooth motion

@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from(targets, {
             scrollTrigger: {
                 trigger: trigger,
-                start: 'top 80%',
+                start: 'top 95%', // Trigger much earlier
                 toggleActions: 'play none none none'
             },
-            duration: 1,
+            duration: 0.8, // Slightly faster duration
             y: 50,
             opacity: 0,
-            stagger: 0.15,
+            stagger: 0.1, // Faster stagger sequence
             ease: 'power3.out',
             clearProps: 'all'
         });
