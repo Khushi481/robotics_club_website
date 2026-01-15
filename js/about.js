@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const stats = gsap.utils.toArray('.stat-num');
     stats.forEach(stat => {
         const val = parseInt(stat.innerText);
-        if (!isNaN(val)) {
+        if (!isNaN(val) && !stat.classList.contains('no-counter')) {
             gsap.from(stat, {
                 scrollTrigger: {
                     trigger: '.history-highlights',

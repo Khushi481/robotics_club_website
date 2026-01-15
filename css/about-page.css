@@ -230,6 +230,11 @@
     color: var(--secondary-neon);
     margin-bottom: 5px;
     font-family: var(--font-heading);
+    min-width: 120px;
+    /* Prevent layout shift */
+    font-variant-numeric: tabular-nums;
+    /* Monospaced numbers */
+    display: inline-block;
 }
 
 .stat-label {
@@ -447,18 +452,50 @@
     }
 
     .timeline-line {
-        left: 20px;
+        left: 31px;
+        /* Align with achievements page style */
     }
 
     .milestone {
         width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        text-align: left;
+    }
+
+    .milestone.left,
+    .milestone.right {
         left: 0;
-        padding-left: 60px;
         text-align: left;
     }
 
     .milestone.left::after,
     .milestone.right::after {
-        left: -5px;
+        display: block;
+        /* Make sure it's visible */
+        position: absolute;
+    }
+
+    /* Re-style the year label for mobile if needed, or just let it float. 
+       Actually, achievements page puts it inside. The current about page uses ::after for the year.
+       Let's adjust the ::after position to be near the dot.
+    */
+    .milestone::after {
+        left: -55px;
+        /* Position next to dot */
+        top: 25px;
+        font-size: 0.8rem;
+        padding: 2px 8px;
+    }
+
+    .milestone.left::after {
+        right: auto;
+        /* Override desktop right align */
+        left: 5px;
+        /* Adjust for mobile */
+    }
+
+    .milestone.right::after {
+        left: 5px;
     }
 }

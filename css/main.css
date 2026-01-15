@@ -157,13 +157,13 @@ img {
     padding: 10px 0;
 }
 
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: var(--nav-height);
-        /* Keep height constant to prevent glitchy reflow */
-    }
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+    /* Keep height constant to prevent glitchy reflow */
+}
 
 .navbar.scrolled .nav-container {
     height: 80px;
@@ -1082,7 +1082,6 @@ img {
     border: 1px solid var(--border-glass);
     border-radius: 16px;
     padding: 30px;
-    height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
