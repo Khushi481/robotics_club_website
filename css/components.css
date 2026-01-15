@@ -667,7 +667,7 @@
 /* Event Card V2 */
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -789,7 +789,7 @@
 /* Ongoing Projects area */
 .ongoing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -1295,5 +1295,4 @@
 
 .glow-pill--cyan {
     background: linear-gradient(180deg, var(--secondary-neon) 0%, #001B79 100%);
-    >>>>>>>28f7c95b46aa86597a7acb6b68d5f1be2c450a99
 }

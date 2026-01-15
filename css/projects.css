@@ -329,12 +329,80 @@
     color: #fff;
 }
 
+/* Mobile Responsive Fixes */
 @media (max-width: 768px) {
+    .projects-container {
+        padding: 40px 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .filter-section {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .filter-select {
+        width: 100%;
+    }
+
     .modal-content {
         grid-template-columns: 1fr;
     }
 
     .modal-image {
         height: 250px;
+    }
+
+    .modal-details {
+        padding: 25px 20px;
+    }
+
+    .modal-title {
+        font-size: 1.8rem;
+    }
+
+    .modal-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 30px 10px;
+    }
+
+    .projects-grid {
+        gap: 20px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+
+    .filter-section {
+        padding: 12px;
+    }
+
+    .modal-details {
+        padding: 20px 15px;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
     }
 }
