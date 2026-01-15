@@ -475,3 +475,232 @@
         right: auto;
     }
 }
+
+/* --- Milestone Graph (Diagonal Banners) --- */
+
+.milestone-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0a;
+    /* Ensure dark background */
+}
+
+.milestone-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 0 20px;
+}
+
+.milestone-card {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.milestone-card:hover {
+    transform: translateX(10px);
+}
+
+/* Icon on the left */
+.milestone-icon-wrapper {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 2;
+    margin-right: -25px;
+    /* Overlap with banner */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+    position: relative;
+}
+
+.milestone-icon-wrapper i {
+    z-index: 3;
+}
+
+/* The Banner Body */
+.milestone-banner {
+    flex-grow: 1;
+    position: relative;
+    padding: 25px 60px 25px 60px;
+    /* Padding for content */
+    color: #fff;
+    /* 
+       Clip Path Description:
+       1. Top Left (slanted in): 30px 0%
+       2. Top Right (straight): 100% 0%
+       3. Arrow Tip: 100% + 30px (handled by container width or simpler shape)
+       
+       Let's stick to the reference:
+       - Rectangle with arrow point on right.
+       - Diagonal cut on left.
+    */
+    clip-path: polygon(40px 0%,
+            /* Top-Left */
+            calc(100% - 40px) 0%,
+            /* Top-Right (start of arrow) */
+            100% 50%,
+            /* Arrow Tip */
+            calc(100% - 40px) 100%,
+            /* Bottom-Right (end of arrow) */
+            0% 100%
+            /* Bottom-Left */
+        );
+
+    background: linear-gradient(135deg, #444, #222);
+    filter: drop-shadow(5px 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.milestone-content {
+    position: relative;
+    z-index: 4;
+}
+
+.milestone-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.milestone-content p {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Number at the tip */
+.milestone-number {
+    position: absolute;
+    right: 60px;
+    /* Position inside the arrow area */
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    /* Diamond shape */
+    background: #fff;
+    color: #333;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+
+.milestone-number span {
+    transform: rotate(-45deg);
+    /* Counter-rotate text */
+    font-weight: 800;
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+}
+
+/* --- Color Variants (Theme Adapted) --- */
+
+/* 1. Neon Purple Theme */
+.highlight-orange,
+/* Mapping old classes to new theme for ease */
+.highlight-purple {
+    background: linear-gradient(135deg, rgba(189, 0, 255, 0.2), rgba(189, 0, 255, 0.05));
+    border: 1px solid rgba(189, 0, 255, 0.3);
+}
+
+.text-orange,
+.text-purple {
+    color: var(--neon-purple);
+}
+
+/* 2. Neon Blue Theme */
+.highlight-pink,
+.highlight-violet {
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.2), rgba(0, 243, 255, 0.05));
+    border: 1px solid rgba(0, 243, 255, 0.3);
+}
+
+.text-pink,
+.text-violet {
+    color: var(--neon-blue);
+}
+
+/* Common overrides for the themed look */
+.milestone-banner {
+    /* Remove default dark gradient, use the specific one above */
+    /* Add a glow effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.milestone-number {
+    background: #000;
+    color: #fff;
+    border: 1px solid var(--card-border);
+}
+
+.highlight-orange .milestone-number,
+.highlight-purple .milestone-number {
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+    box-shadow: 0 0 10px rgba(189, 0, 255, 0.3);
+}
+
+.highlight-pink .milestone-number,
+.highlight-violet .milestone-number {
+    border-color: var(--neon-blue);
+    color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .milestone-card {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .milestone-icon-wrapper {
+        margin-right: 0;
+        margin-bottom: -15px;
+        /* Overlap top */
+        margin-left: 30px;
+        background: #000;
+        /* Background for icon to hide banner overlap */
+        border-radius: 50%;
+        padding: 10px;
+    }
+
+    .milestone-banner {
+        width: 100%;
+        padding: 30px 40px 30px 30px;
+        clip-path: polygon(0% 0%,
+                100% 0%,
+                100% 100%,
+                0% 100%);
+        /* Remove clip path for clean mobile view or simplify */
+        border-radius: 10px;
+    }
+
+    .milestone-number {
+        right: 20px;
+        transform: translateY(-50%);
+        /* No rotation */
+        border-radius: 50%;
+    }
+
+    .milestone-number span {
+        transform: none;
+    }
+}

@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Mock Delay (current behavior kept for demo/testing)
             setTimeout(() => {
                 // Success State
-                const formPanel = document.querySelector('.form-panel');
+                const formPanel = document.querySelector('.contact-form-wrapper');
                 formPanel.innerHTML = `
                     <div style="text-align: center; padding: 40px 20px;">
                         <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--secondary-neon); margin-bottom: 20px;"></i>
@@ -125,6 +125,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
             }, 2000);
+        });
+    }
+
+    // 3. Connect Page Animations (Glass Containers)
+    const glassContainers = document.querySelectorAll('.main-glass-container');
+    if (glassContainers.length > 0 && typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(glassContainers, {
+            scrollTrigger: {
+                trigger: '.contact-page-wrapper',
+                start: 'top 80%',
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.3,
+            ease: 'power3.out'
         });
     }
 });

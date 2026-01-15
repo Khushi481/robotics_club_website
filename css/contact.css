@@ -1,0 +1,343 @@
+/* Contact Page Specific Styles */
+
+/* --- Layout Main Containers --- */
+.contact-page-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* Vertical spacing between the 3 main containers */
+}
+
+/* Standard Glass Container for all sections */
+.main-glass-container {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+/* --- Section 1: Info & Form Split --- */
+.contact-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left Column: Info */
+.contact-info-col {
+    padding-top: 10px;
+}
+
+.section-tag {
+    font-size: 0.9rem;
+    color: var(--secondary-neon);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.contact-headline {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #fff, #aaa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-subtext {
+    font-size: 1.05rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 95%;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.info-item h4 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.info-item p {
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 3px;
+}
+
+.social-links-contact {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.social-links-contact a {
+    color: #fff;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links-contact a:hover {
+    color: var(--secondary-neon);
+}
+
+
+/* Right Column: Form */
+.contact-form-wrapper {
+    /* No background here anymore, inherited from main container */
+    padding: 10px;
+}
+
+.form-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.form-header p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    /* Slight darken for inputs */
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #666;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom-color: var(--secondary-neon);
+}
+
+.form-submit-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.form-submit-btn:hover {
+    background: var(--secondary-neon);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+
+/* --- Section 2: Map --- */
+.map-container-inner {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    filter: grayscale(100%) invert(90%);
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.map-container-inner:hover {
+    filter: grayscale(0%) invert(0%);
+    opacity: 1;
+}
+
+.map-container-inner iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* --- Section 3: FAQ --- */
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--secondary-neon);
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+    color: var(--secondary-neon);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-answer p {
+    padding: 0 10px 20px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg);
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .contact-split-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-headline {
+        font-size: 2.2rem;
+    }
+
+    .main-glass-container {
+        padding: 30px;
+        /* Reduced padding on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-page-wrapper {
+        margin: 20px auto;
+        padding: 0 10px;
+        /* Reduced outer padding */
+        gap: 40px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .main-glass-container {
+        padding: 30px 20px;
+        /* Comfortable but tighter padding */
+        border-radius: 15px;
+    }
+
+    .contact-headline {
+        font-size: 2rem;
+        /* Smaller headline */
+        margin-bottom: 15px;
+    }
+
+    .contact-subtext {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .form-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .map-container-inner {
+        height: 250px;
+        /* Shorten map on mobile */
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 15px 5px;
+    }
+
+    .form-submit-btn {
+        width: 100%;
+        /* Full width button on mobile */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-glass-container {
+        padding: 25px 15px;
+    }
+
+    .contact-headline {
+        font-size: 1.8rem;
+    }
+
+    .section-tag {
+        font-size: 0.8rem;
+    }
+}

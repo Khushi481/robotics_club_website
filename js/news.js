@@ -93,7 +93,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-});
+    // --- GSAP Animations ---
+    if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
 
-// Add fade in animation to stylesheet dynamically or assume in CSS
-// I will ensure CSS has .hidden class
+        const animateNews = () => {
+            // Animate Club News
+            gsap.from('.club-news-card', {
+                scrollTrigger: {
+                    trigger: '.club-news-grid',
+                    start: 'top 95%', // Trigger sooner
+                },
+                y: 30, // Reduced distance
+                opacity: 0,
+                duration: 0.5, // Faster animation
+                stagger: 0.1, // Faster sequence
+                ease: 'power2.out',
+                clearProps: 'all' // Ensure clean state after animation
+            });
+
+            // Animate Industry News
+            gsap.from('.industry-card', {
+                scrollTrigger: {
+                    trigger: '.industry-news-grid',
+                    start: 'top 95%', // Trigger sooner
+                },
+                y: 30, // Reduced distance
+                opacity: 0,
+                duration: 0.5, // Faster animation
+                stagger: 0.1, // Faster sequence
+                ease: 'power2.out',
+                clearProps: 'all' // Ensure clean state after animation
+            });
+        };
+
+        // Initialize animations
+        animateNews();
+
+        // Refresh ScrollTrigger after all assets (images) are loaded to ensure correct positions
+        window.addEventListener('load', () => {
+            ScrollTrigger.refresh();
+        });
+    }
+});

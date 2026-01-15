@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openModal(card) {
         // Populate Data
-        const title = card.querySelector('.project-title').textContent;
+        const title = card.querySelector('.front-title').textContent;
         const img = card.querySelector('.card-image-wrapper img').src;
         const desc = card.getAttribute('data-full-desc');
         const year = card.getAttribute('data-year');
@@ -116,5 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
+    // --- GSAP Animations ---
+    if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Staggered entrance for cards
+        gsap.from('.project-showcase-card', {
+            scrollTrigger: {
+                trigger: '.projects-grid',
+                start: 'top 80%', // Start when top of grid hits 80% viewport height
+            },
+            y: 100,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'back.out(1.5)' // Added "pop" effect
+        });
+    }
 
 });

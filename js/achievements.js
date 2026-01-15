@@ -43,32 +43,21 @@ document.addEventListener('DOMContentLoaded', () => {
         ScrollTrigger.refresh();
     });
 
-    // Timeline Animation
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach((item, index) => {
-        const isEven = index % 2 !== 0;
-        gsap.from(item.querySelector('.timeline-content-inner'), {
+    // Milestone Animation (New Diagonal Cards)
+    const milestones = document.querySelectorAll('.milestone-card');
+    if (milestones.length > 0) {
+        gsap.from('.milestone-card', {
             scrollTrigger: {
-                trigger: item,
-                start: 'top 85%',
+                trigger: '.milestone-container',
+                start: 'top 80%',
             },
-            x: isEven ? 50 : -50,
+            x: 100, // Slide in from right
             opacity: 0,
             duration: 1,
-            ease: 'power2.out'
+            stagger: 0.3,
+            ease: 'power3.out'
         });
-
-        gsap.from(item.querySelector('.timeline-dot'), {
-            scrollTrigger: {
-                trigger: item,
-                start: 'top 85%',
-            },
-            scale: 0,
-            duration: 0.5,
-            delay: 0.5,
-            ease: 'back.out(2)'
-        });
-    });
+    }
 
     // Floating Trophy Animation
     gsap.to('.decorative-trophy', {
