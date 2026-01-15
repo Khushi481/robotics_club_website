@@ -9,7 +9,7 @@
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 40px;
     margin-top: 40px;
 }
@@ -379,8 +379,22 @@
 
 /* Small Screen Fixes (under 600px) */
 @media (max-width: 600px) {
+
+    /* Ensure no overflow */
     .projects-container {
         padding: 30px 10px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .projects-container * {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
     }
 
     .filter-section {
@@ -457,8 +471,15 @@
     }
 
     /* Card adjustments */
+    .project-showcase-card {
+        max-width: 100%;
+        margin: 0;
+    }
+
     .card-body {
-        padding: 20px;
+        padding: 15px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .project-title {
